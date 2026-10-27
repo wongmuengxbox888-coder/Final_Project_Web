@@ -6,27 +6,136 @@
     <title>Form health</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gradient-to-r from-blue-500 to-purple-500 min-h-screen">
+<body class="bg-gradient-to-b from-[#C6D3DA] via-[#5AAEAF] to-[#17496D] min-h-screen">
 
-    
-    <nav class="p-6 flex justify-between items-center bg-white shadow-md sticky top-0 z-50">
-        <img src="image/who care I care 4.png" alt="Avatar" class="w-16 h-12 ">
-        <ul class="flex space-x-20 text[#14466D] justify-end">
-            <li><a href="index.html" class="hover:underline">Home</a></li>
+    <!-- Responsive: ปรับ Padding ของ Navbar ตามขนาดหน้าจอ -->
+    <nav class="p-3 sm:p-4 md:p-6 flex flex-wrap justify-between items-center gap-3 bg-white shadow-md sticky top-0 z-50">
+        <!-- Responsive: ปรับขนาดโลโก้ให้เล็กลงบนมือถือ -->
+        <img src="image/who care I care 4.png" alt="Avatar" class="w-16 h-10 sm:w-20 sm:h-12">
+
+        <!-- Responsive: ซ่อนเมนูบนมือถือ และแสดงตั้งแต่หน้าจอ md (768px) -->
+        <ul class="hidden md:flex gap-4 lg:gap-8 text-[#14466D] justify-end">
+            <li><a href="index.html"  class="hover:underline underline">Home</a></li>
             <li><a href="anatomy.html" class="hover:underline">Anatomy</a></li>
             <li><a href="form.html" class="hover:underline">Form</a></li>
             <li><a href="form.html" class="hover:underline">Form</a></li>
             <li><a href="form.html" class="hover:underline">Form</a></li>
             <li><a href="form.html" class="hover:underline">Form</a></li>
         </ul>
-        <div class="flex items-center space-x-4">
-            <input type="text" placeholder="Search..." class="px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-300">
-            <a href="#" class="text-white hover:underline">Login</a>
-            
-        <img class="w-10 h-10 p-1 rounded-full ring-2 ring-default" src="" alt="Bordered avatar">
 
+        <!-- ระยะห่างปุ่ม repo  -->
+        <div class="relative flex items-center gap-2 sm:gap-4">
+
+            <!-- Responsive: ซ่อนช่อง Search เมื่อหน้าจอเล็กกว่า 640px -->
+            <div class="relative hidden sm:block">
+                <input type="text" placeholder="Search..." class="px-4 pl-10 w-[150px] md:w-[200px] lg:w-[350px] py-2 rounded-[20px] focus:outline-none focus:ring-2 focus:ring-blue-300 border border-gray-300">
+                <!-- ไอคอนแว่นขยาย -->
+                <svg xmlns="http://www.w3.org/2000/svg" 
+                    class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500"
+                    fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <circle cx="11" cy="11" r="7" stroke-width="2"></circle>
+                    <path stroke-width="2" stroke-linecap="round" d="m16 16 4 4"></path>
+                </svg>
+            </div>
             
+                
+            <a href="#" class="text-[#14466D] hover:underline">Login</a>
+
+            <div class="relative">
+                <img id="avatarButton" type="button" data-dropdown-toggle="userDropdown" data-dropdown-placement="bottom-start" class="w-10 h-9 sm:w-12 sm:h-10 rounded-full cursor-pointer border border-gray-300" src="image/image 7.png" alt="User dropdown">
+            </div>
+
+            <!-- Dropdown menu -->
+            <div id="userDropdown" class="z-10 absolute mt-2 top-full right-0 rounded-[10px] bg-black/40 backdrop-blur-sm border-white/30 hidden text-white border shadow-lg w-44">
+                <div class="px-4 py-3 border-b border-white/20 text-sm">
+                    <div class="font-medium">303 304 306</div>
+                    <div class="truncate">Ds_web@su.ac.th</div>
+                </div>
+                <ul class="p-2 text-sm font-medium" aria-labelledby="avatarButton">
+                    <li><a href="#" class="block w-full p-2 hover:bg-white/10 rounded-md">Settings</a></li>
+                    <li><a href="#" class="block w-full p-2 hover:bg-white/10 rounded-md">Help</a></li>
+                    <li><a href="#" class="block w-full p-2 hover:bg-white/10 rounded-md">Sign out</a></li>
+                </ul>
+            </div>
+
         </div>
     </nav>
+
+    
+    <section class="min-h-screen p-3 sm:p-4 md:p-8">
+        <div class="bg-white/80 rounded-[20px] shadow-2xl min-h-screen p-4 sm:p-6 md:p-8">
+            <div class="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 justify-center">
+
+                <!-- กำหนดขนาดโลโก้ตามหน้าจอ -->
+                <img src="image/who care I care 4.png" alt="" class="w-20 sm:w-28 md:w-32">
+
+                <div class="text-center sm:text-left">
+                    <!-- Repo ลดขนาดหัวข้อบนมือถือ -->
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-[#14466D]">
+                        Health Form
+                    </h1>
+
+                    <!-- repo phone  -->
+                    <p class="mt-2 text-gray-600 text-base sm:text-xl md:text-[26px]">
+                        กรุณากรอกข้อมูลสุขภาพของคุณ
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Responsive: มือถือ 1 คอลัมน์, หน้าจอ sm 2 คอลัมน์, หน้าจอ md 3 คอลัมน์ -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
+
+                <div>
+                    <p class="mt-4 sm:mt-[28px] text-[#14466D]">ชื่อจริง</p>
+                    <input type="text" placeholder="กรอกชื่อของคุณ" class="mt-[6px] w-full rounded-lg bg-white text-gray-900 placeholder-gray-400 shadow-md border border-gray-100 px-3 py-3 sm:py-4 text-sm ">
+                </div>
+
+                <div>
+                    <p class="mt-4 sm:mt-[28px] text-[#14466D]">ชื่อกลาง</p>
+                    <input type="text" placeholder="กรอกชื่อกลางของคุณ" class="mt-[6px] w-full rounded-lg bg-white text-gray-900 placeholder-gray-400 shadow-md border border-gray-100 px-3 py-3 sm:py-4 text-sm ">
+                </div>
+
+                <div>
+                    <p class="mt-4 sm:mt-[28px] text-[#14466D]">นามสกุล</p>
+                    <input type="text" placeholder="กรอกนามสกุลของคุณ" class="mt-[6px] w-full rounded-lg bg-white text-gray-900 placeholder-gray-400 shadow-md border border-gray-100 px-3 py-3 sm:py-4 text-sm ">
+                </div>
+                
+
+            </div>
+            <div class="mt-6">
+                <p class="sm:mt-[28px] text-[#14466D]">ชื่อจริง</p>
+                <!-- textarea ใช้เพื่อไม่ให้ placeholder ไปอยุ่กลาง -->
+                    <textarea type="text" placeholder="กรอกที่อยู่" class="mt-[6px] w-full h-[200px] rounded-lg bg-white text-gray-900 placeholder-gray-400 shadow-md border border-gray-100 px-3 py-3 sm:py-4 text-sm text-sm "></textarea>
+            </div>
+
+    <div class="grid  sm:grid-cols-2 md:grid-cols-6 gap-4 sm:gap-5 md:gap-6">
+        <div class="md:col-span-1">
+             <p class="mt-4 sm:mt-[28px] text-[#14466D]">อายุ</p>
+              <input type="text" placeholder="กรอกอายุ" class="mt-[6px] w-full rounded-lg bg-white text-gray-900 placeholder-gray-400 shadow-md border border-gray-100 px-3 py-3 sm:py-4 text-sm">
+        </div>
+
+        <div class="md:col-span-1">
+              <p class="mt-4 sm:mt-[28px] text-[#14466D]">น้ำหนัก</p>
+               <input type="text" placeholder="กรอกน้ำหนัก" class="mt-[6px] w-full rounded-lg bg-white text-gray-900 placeholder-gray-400 shadow-md border border-gray-100 px-3 py-3 sm:py-4 text-sm">
+          </div>
+
+         <div class="md:col-span-1">
+               <p class="mt-4 sm:mt-[28px] text-[#14466D]">ส่วนสูง</p>
+              <input type="text" placeholder="กรอกส่วนสูง" class="mt-[6px] w-full rounded-lg bg-white text-gray-900 placeholder-gray-400 shadow-md border border-gray-100 px-3 py-3 sm:py-4 text-sm">
+         </div>
+        <div class="md:col-span-1">
+             <p class="mt-4 sm:mt-[28px] text-[#14466D]">เบอร์โทรศัพท์</p>
+             <input type="text" placeholder="กรอกเบอร์โทรศัพท์" class="mt-[6px] w-full rounded-lg bg-white text-gray-900 placeholder-gray-400 shadow-md border border-gray-100 px-3 py-3 sm:py-4 text-sm">
+         </div>
+        <div class="md:col-span-2">
+             <p class="mt-4 sm:mt-[28px] text-[#14466D]">อีเมล/Email</p>
+             <input type="text" placeholder="กรอกอีเมล" class="mt-[6px] w-full rounded-lg bg-white text-gray-900 placeholder-gray-400 shadow-md border border-gray-100 px-3 py-3 sm:py-4 text-sm">
+        </div>
+        </div>
+    </div>
+    </section>
+
+    <script src="alldd.js"></script>
 </body>
 </html>
