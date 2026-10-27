@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anatomy BMI Viewer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- กัน โมเดลพัง  -->
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+
+  <style>/* ใช้ css เป็วเสริม*/
+    input[type="range"] { accent-color: #20466b; }
+  </style>
+</head>
+
+<body class="bg-[#0b0b0b] text-white font-sans">
+<!-- *คอรบไฟล์ โมเดลซ้าย ขวา ui -->
+  <div class="min-h-screen grid grid-cols-1 lg:grid-cols-[1fr_390px]"> 
+
+    <!-- โม -->
+    <section class="relative h-[62vh] lg:h-screen bg-gradient-to-b from-[#1a1a1a] to-[#0b0b0b]">
+      <div id="viewport" class="absolute inset-0"></div>
+
+      <!-- มุมซ้ายบว -->
+    <div class="absolute top-4 left-4 w-full pointer-events-none">
+      <div class="text-center">
+        <h1 class="text-xl font-bold text-[#20466b]">ANATOMY</h1>
+        <p class="text-xs text-gray-400">ลากเพื่อหมุน • เลื่อนล้อเพื่อซูม</p>
+      </div>
+    </div>
+
+      <!-- มุมซ้ายล่าง -->
+      <div class="absolute bottom-4 left-4 text-xs text-gray-400 pointer-events-none leading-5">
+        <div>ความสูงโมเดล: <span id="infoHeight" class="text-white font-semibold">-</span></div>
+        <div>ความกว้างลำตัว: <span id="infoGirth" class="text-white font-semibold">-</span></div>
+      </div>
+    </section>
+
+    <!-- กล่อง กรอกข้อมูล  -->
+    <section class="relative m-4 lg:m-0 lg:absolute lg:right-6 lg:top-1/2 lg:-translate-y-1/2 lg:w-[440px] lg:max-h-[calc(100vh-3rem)] lg:overflow-y-auto bg-white text-gray-900 rounded-2xl shadow-2xl p-6">
+      <h2 class="text-lg font-bold mb-1">คำนวณ BMI</h2>
+      <p class="text-xs text-gray-500 mb-5">
+        กรอกส่วนสูงและน้ำหนัก โมเดลจะยืดหด อ้วน ผอม ตามค่าที่กรอกแบบเรียลไทม์
+      </p>
+
+      <!-- ส่วนสูง -->
+      <div class="mb-5">
+        <div class="flex items-center justify-between mb-2">
+          <label for="height" class="text-sm text-gray-700">ส่วนสูง (ซม.)</label>
+          <input id="height" type="number" min="120" max="220" step="1" value="170"
+                 class="w-24 rounded-md bg-[#f1f1f1] text-gray-900 border border-gray-300 px-3 py-2 text-right focus:outline-none focus:border-[#20466b]">
+        </div>
+        <input id="heightRange" type="range" min="120" max="220" step="1" value="170" class="w-full">
+        <div class="flex justify-between text-[11px] text-gray-500"><span>120</span><span>220</span></div>
+      </div>
+
+      <!-- น้ำหนัก -->
+      <div class="mb-5">
+        <div class="flex items-center justify-between mb-2">
+          <label for="weight" class="text-sm text-gray-700">น้ำหนัก (กก.)</label>
+          <input id="weight" type="number" min="30" max="200" step="0.5" value="63.6"
+                 class="w-24 rounded-md bg-[#f1f1f1] text-gray-900 border border-gray-300 px-3 py-2 text-right focus:outline-none focus:border-[#20466b]">
+        </div>
+        <input id="weightRange" type="range" min="30" max="200" step="0.5" value="63.6" class="w-full">
+        <div class="flex justify-between text-[11px] text-gray-500"><span>30</span><span>200</span></div>
+      </div>
+
+      <!-- BMI (ปรับย้อนกลับเป็นน้ำหนักได้) -->
+      <div class="mb-5">
+        <div class="flex items-center justify-between mb-2">
+          <label for="bmiRange" class="text-sm text-gray-700">ปรับด้วยค่า BMI</label>
+          <span class="text-xs text-gray-500">ลากแล้วน้ำหนักจะเปลี่ยนตาม</span>
+        </div>
+        <input id="bmiRange" type="range" min="12" max="50" step="0.1" value="22" class="w-full"> 
+      </div>
+
+      <!-- ผลลัพธ์ BMI -->
+      <div class="rounded-xl bg-[#f1f1f1] border border-gray-200 p-4 mb-5">
+        <div class="flex items-end justify-between">
+          <div>
+            <p class="text-xs text-gray-500">ค่า BMI</p>
+            <p id="bmiValue" class="text-4xl font-bold leading-none mt-1 text-gray-900">22.0</p>
+          </div>
+          <span id="bmiCategory"
+                class="rounded-full px-3 py-1 text-xs font-semibold bg-green-600/20 text-green-400">ปกติ</span>
+        </div>
+
+        <!-- แถบสี BMI -->   <!--ใช้ gemini geanerate bmi color -->
+        <div class="relative mt-5 h-3 rounded-full overflow-hidden"
+             style="background: linear-gradient(90deg,#38bdf8 0%,#22c55e 20%,#eab308 33%,#f97316 45%,#ef4444 70%,#991b1b 100%)">
+        </div>
+        <div class="relative h-0">
+          <div id="bmiMarker"
+               class="absolute -top-[18px] h-6 w-1 -translate-x-1/2 rounded bg-[#20466b] shadow transition-[left] duration-300"
+               style="left: 30%"></div>
+        </div>
+        <div class="flex justify-between text-[10px] text-gray-500 mt-3">
+          <span>12</span><span>18.5</span><span>23</span><span>25</span><span>30</span><span>45+</span>
+        </div>
+      </div>
+
+      <!-- ตัวเลือกการแสดงผล -->
+      <div class="rounded-xl bg-[#f1f1f1] border border-gray-200 p-4 mb-5">
+        <div class="flex items-center justify-between mb-2">
+          <label for="exaggeration" class="text-sm text-gray-700">ความชัดของรูปร่าง</label>
+          <span id="exaggerationLabel" class="text-xs text-gray-500">1.0×</span>
+        </div>
+        <input id="exaggeration" type="range" min="0.5" max="2" step="0.1" value="1" class="w-full">
+        <p class="text-[11px] text-gray-500 mt-1">เพิ่มเพื่อให้เห็นความอ้วน/ผอมชัดขึ้น</p>
+
+        <label class="flex items-center gap-2 mt-4 text-sm text-gray-700 cursor-pointer">
+          <input id="autoRotate" type="checkbox" class="h-4 w-4 accent-[#ff5500]">
+          หมุนโมเดลอัตโนมัติ
+        </label>
+      </div>
+
+      <div class="flex gap-3">
+        <button id="reset"
+                class="flex-1 rounded-lg bg-[#20466b]  transition px-4 py-3 font-semibold text-white text-sm hover:bg-orange-700">
+          รีเซ็ต
+        </button>
+      </div>
+
+      <!-- ช่องพิมพ์ข้อความ -->
+      <div class="mt-6 pt-5 border-t border-gray-200">
+        <!-- หัวข้อสีน้ำเงินเข้ม -->
+        <label for="symptomInput" class="block text-lg text-[#20466b] mb-2">บอกความรู้สึกของคุณ</label>
+        <!-- แถวเดียว: ช่องพิมพ์ (ยืดเต็ม) + ปุ่ม Enter -->
+        <div class="flex items-center gap-3">
+          <input id="symptomInput" type="text" placeholder="พิมพ์ที่นี่ . . ."
+                 class="flex-1 min-w-0 rounded-lg bg-white text-gray-900 placeholder-gray-400 shadow-md border border-gray-100 px-3 py-2 text-sm focus:outline-none focus:border-[#20466b]">
+          <button id="symptomEnter" type="button"
+                  class="rounded-full bg-[#20466b] hover:bg-[#183a58] transition px-6 py-2 text-sm font-semibold text-white">Enter
+          </button>
+        </div>
+        <!-- ข้อความเล็กใต้ช่องพิมพ์ + ลิงก์สีเขียวอมฟ้า -->
+        <p class="text-[11px] text-gray-700 mt-2">
+          เครื่องมือนี้ไม่ได้ให้คำแนะนำทางการแพทย์
+          <a href="#" class="text-[#5f9ea0] hover:underline">ดูข้อมูลเพิ่มเติม</a>
+        </p>
+      </div>
+
+      <p class="text-[11px] text-gray-500 mt-5 leading-5">
+        เกณฑ์ BMI ตามมาตรฐานเอเชีย: &lt;18.5 ผอม • 18.5–22.9 ปกติ • 23–24.9 น้ำหนักเกิน • 25–29.9 อ้วน • ≥30 อ้วนมาก<br>
+        โมเดลเป็นภาพประกอบเชิงสัดส่วนเท่านั้น ไม่ใช่การวินิจฉัยทางการแพทย์
+      </p>
+    </section>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
