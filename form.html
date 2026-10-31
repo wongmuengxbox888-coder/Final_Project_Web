@@ -14,13 +14,12 @@
         <img src="image/who care I care 4.png" alt="Avatar" class="w-16 h-10 sm:w-20 sm:h-12">
 
         <!-- Responsive: ซ่อนเมนูบนมือถือ และแสดงตั้งแต่หน้าจอ md (768px) -->
-        <ul class="hidden md:flex gap-4 lg:gap-8 text-[#14466D] justify-end">
-            <li><a href="index.html"  class="hover:underline underline">Home</a></li>
-            <li><a href="anatomy.html" class="hover:underline">Anatomy</a></li>
-            <li><a href="form.html" class="hover:underline">Form</a></li>
-            <li><a href="form.html" class="hover:underline">Form</a></li>
-            <li><a href="form.html" class="hover:underline">Form</a></li>
-            <li><a href="form.html" class="hover:underline">Form</a></li>
+        <ul class="hidden md:flex gap-4 lg:gap-8 text-[#14466D] justify-end ">
+            <li><a href="index.html" class="hover:border hover:rounded hover:p-3 hover:rounded-[20px] hover:shadow-lg hover:text-[#397B8D] border border-transparent p-3 transition-all duration-300">Home</a></li>
+            <li><a href="form.html" class="hover:border hover:rounded hover:p-3 hover:rounded-[20px] hover:shadow-lg hover:text-[#397B8D] border border-transparent p-3 transition-all duration-300">My Health</a></li>
+            <li><a href="form.html" class="hover:border hover:rounded hover:p-3 hover:rounded-[20px] hover:shadow-lg hover:text-[#397B8D] border text-[#397B8D] p-3 rounded-[20px] shadow-lg">AI Health Assistant</a></li>
+            <li><a href="form.html" class="hover:border hover:rounded hover:p-3 hover:rounded-[20px] hover:shadow-lg hover:text-[#397B8D] border border-transparent p-3 transition-all duration-300">Find Health Care</a></li>
+            <li><a href="form.html" class="hover:border hover:rounded hover:p-3 hover:rounded-[20px] hover:shadow-lg hover:text-[#397B8D] border border-transparent p-3 transition-all duration-300">Health News</a></li>
         </ul>
 
         <!-- ระยะห่างปุ่ม repo  -->
@@ -39,7 +38,7 @@
             </div>
             
                 
-            <a href="#" class="text-[#14466D] hover:underline">Login</a>
+            
 
             <div class="relative">
                 <img id="avatarButton" type="button" data-dropdown-toggle="userDropdown" data-dropdown-placement="bottom-start" class="w-10 h-9 sm:w-12 sm:h-10 rounded-full cursor-pointer border border-gray-300" src="image/image 7.png" alt="User dropdown">
@@ -52,7 +51,9 @@
                     <div class="truncate">Ds_web@su.ac.th</div>
                 </div>
                 <ul class="p-2 text-sm font-medium" aria-labelledby="avatarButton">
+                    <li><a href="index.html" class="block w-full p-2 hover:bg-white/10 rounded-md">Home</a></li>
                     <li><a href="#" class="block w-full p-2 hover:bg-white/10 rounded-md">Settings</a></li>
+
                     <li><a href="#" class="block w-full p-2 hover:bg-white/10 rounded-md">Help</a></li>
                     <li><a href="#" class="block w-full p-2 hover:bg-white/10 rounded-md">Sign out</a></li>
                 </ul>
@@ -62,7 +63,7 @@
     </nav>
 
     
-    <section class="min-h-screen p-3 sm:p-4 md:p-8">
+    <section class="min-h-screen p-3 sm:p-4 md:p-8 border ">
         <div class="bg-white/80 rounded-[20px] shadow-2xl min-h-screen p-4 sm:p-6 md:p-8">
             <div class="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 justify-center">
 
@@ -82,9 +83,18 @@
                 </div>
 
             </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5 md:gap-6 mt-10 border-t border-gray-300 cursor-pointer transition-all duration-300">
+                
+                <div class="w-126 h-[14px] bg-[#397B8D] border border-gray-300 rounded-lg shadow-md  mt-4 "></div>
+                <div class="w-126 h-[14px] bg-white border border-gray-300 rounded-lg shadow-md mt-4 hover:bg-[#397B8D] transition-all duration-200"></div>
+                <div class="w-126 h-[14px] bg-white border border-gray-300 rounded-lg shadow-md  mt-4 hover:bg-[#397B8D] transition-all duration-200"></div>
+            </div>
+            <p class="fa-bold text-[24px] mt-6">ขั้นตอนที่ 1 จาก 3 ส่วน;</p>
 
-            <!-- Responsive: มือถือ 1 คอลัมน์, หน้าจอ sm 2 คอลัมน์, หน้าจอ md 3 คอลัมน์ -->
+            <!-- กล่อง เล้ก input -->
+            <h2 class="mt-[22px]">1. ข้อมูลทั่วไป</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
+                
 
                 <div>
                     <p class="mt-4 sm:mt-[28px] text-[#14466D]">ชื่อจริง</p>
@@ -100,16 +110,14 @@
                     <p class="mt-4 sm:mt-[28px] text-[#14466D]">นามสกุล</p>
                     <input type="text" placeholder="กรอกนามสกุลของคุณ" class="mt-[6px] w-full rounded-lg bg-white text-gray-900 placeholder-gray-400 shadow-md border border-gray-100 px-3 py-3 sm:py-4 text-sm ">
                 </div>
-                
-
             </div>
             <div class="mt-6">
-                <p class="sm:mt-[28px] text-[#14466D]">ชื่อจริง</p>
+                <p class="sm:mt-[28px] text-[#14466D]">ที่อยู่อาศัย</p>
                 <!-- textarea ใช้เพื่อไม่ให้ placeholder ไปอยุ่กลาง -->
                     <textarea type="text" placeholder="กรอกที่อยู่" class="mt-[6px] w-full h-[200px] rounded-lg bg-white text-gray-900 placeholder-gray-400 shadow-md border border-gray-100 px-3 py-3 sm:py-4 text-sm text-sm "></textarea>
             </div>
 
-    <div class="grid  sm:grid-cols-2 md:grid-cols-6 gap-4 sm:gap-5 md:gap-6">
+    <div class="grid  sm:grid-cols-2 md:grid-cols-6 gap-4 sm:gap-5 md:gap-6  ">
         <div class="md:col-span-1">
              <p class="mt-4 sm:mt-[28px] text-[#14466D]">อายุ</p>
               <input type="text" placeholder="กรอกอายุ" class="mt-[6px] w-full rounded-lg bg-white text-gray-900 placeholder-gray-400 shadow-md border border-gray-100 px-3 py-3 sm:py-4 text-sm">
@@ -133,7 +141,92 @@
              <input type="text" placeholder="กรอกอีเมล" class="mt-[6px] w-full rounded-lg bg-white text-gray-900 placeholder-gray-400 shadow-md border border-gray-100 px-3 py-3 sm:py-4 text-sm">
         </div>
         </div>
+        <div class="border-t border-gray-400 mt-10">
+            <p class="text-gray-400 mt-4">เพศกำเนิด(ถ้าเกี่ยวข้องกับการประเมิน)</p>
+            
+                
+<h2 class="mb-4 font-semibold text-heading mt-4 text-[24px]">text</h2>
+<ul class="items-center w-full text-sm font-medium text-heading bg-neutral-primary-soft border border-default rounded-lg sm:flex">
+    <li class="w-full border-b border-default sm:border-b-0 sm:border-r">
+        <div class="flex items-center ps-3">
+            <input id="horizontal-list-radio-license" type="radio" value="" name="list-radio" class="w-4 h-4 text-neutral-primary border-default-medium bg-neutral-secondary-medium rounded-full checked:border-brand focus:ring-2 focus:outline-none focus:ring-brand-subtle border border-default appearance-none">
+            <label for="horizontal-list-radio-license" class="w-full py-3 select-none ms-2 text-sm font-medium text-heading">Driver License </label>
+        </div>
+    </li>
+    <li class="w-full border-b border-default sm:border-b-0 sm:border-r">
+        <div class="flex items-center ps-3">
+            <input id="horizontal-list-radio-id" type="radio" value="" name="list-radio" class="w-4 h-4 text-neutral-primary border-default-medium bg-neutral-secondary-medium rounded-full checked:border-brand focus:ring-2 focus:outline-none focus:ring-brand-subtle border border-default appearance-none">
+            <label for="horizontal-list-radio-id" class="w-full py-3 select-none ms-2 text-sm font-medium text-heading">State ID</label>
+        </div>
+    </li>
+    <li class="w-full border-b border-default sm:border-b-0 sm:border-r">
+        <div class="flex items-center ps-3">
+            <input id="horizontal-list-radio-military" type="radio" value="" name="list-radio" class="w-4 h-4 text-neutral-primary border-default-medium bg-neutral-secondary-medium rounded-full checked:border-brand focus:ring-2 focus:outline-none focus:ring-brand-subtle border border-default appearance-none">
+            <label for="horizontal-list-radio-military" class="w-full py-3 select-none ms-2 text-sm font-medium text-heading">US Military</label>
+        </div>
+    </li>
+    <li class="w-full">
+        <div class="flex items-center ps-3">
+            <input id="horizontal-list-radio-passport" type="radio" value="" name="list-radio" class="w-4 h-4 text-neutral-primary border-default-medium bg-neutral-secondary-medium rounded-full checked:border-brand focus:ring-2 focus:outline-none focus:ring-brand-subtle border border-default appearance-none">
+            <label for="horizontal-list-radio-passport" class="w-full py-3 select-none ms-2 text-sm font-medium text-heading">US Passport</label>
+        </div>
+    </li>
+</ul>
+
+            </div>
+            <div class="mt-10 ">
+                <h1 class="text-[24px] text-bold ">2. ประวัติสุขภาพ;</h1>
+                <p class="mt-2 text-gray-500">มีโรคประจำตัวหรือโรคที่เคยได้รับการวินิจฉัยหรือไม่? (เลือกได้หลายข้อ)</p>
+            <div class="grid grid-cols-2 gap-6 mt-4 ">
+                <div class="flex flex-col">
+                <input type="checkbox" class="w-[20px]">checkbox1 
+                <input type="checkbox" class="rounded-[50px] w-[20px]">checkbox1
+                <input type="checkbox" class="rounded-[50px] w-[20px]">checkbox1
+                <input type="checkbox" class="rounded-[50px] w-[20px]">checkbox1
+                <input type="checkbox" class="rounded-[50px] w-[20px]">checkbox1
+            </div>
+            </div>
+            <div class="grid grid grid-cols-2 gap-6 mt-4">
+                <div class="flex flex-col">
+                <input type="checkbox" class="rounded-[50px] w-[20px] ">checkbox1 
+                <input type="checkbox" class="rounded-[50px] w-[20px]">checkbox1
+                <input type="checkbox" class="rounded-[50px] w-[20px]">checkbox1
+                <input type="checkbox" class="rounded-[50px] w-[20px]">checkbox1
+                <input type="checkbox" class="rounded-[50px] w-[20px]">checkbox1
+            </div>
+            </div>
+            </div>
+            <div class="mt-4">
+                <p class="text-[20px]">2.1ประวัติแพ้ยา</p>
+                <div class="gap-10">
+                <input type="checkbox" class="rounded-[50px] w-[20px]">checkbox1
+                <input type="checkbox" class="rounded-[50px] w-[20px]">checkbox1
+                <input type="checkbox" class="rounded-[50px] w-[20px]">checkbox1
+                <input type="checkbox" class="rounded-[50px] w-[20px]">checkbox1
+                <input type="checkbox" class="rounded-[50px] w-[20px]">checkbox1
+            </div>
+            </div>
+        <!-- doc tailwind -->
+
+<div class="flex flex-col items-center">
+  <span class="text-sm text-body">
+      Showing now<span class="font-semibold text-heading">1</span> to <span class="font-semibold text-heading">3</span> of <span class="font-semibold text-heading">3</span> Entries
+  </span>
+  <div class="inline-flex mt-4 -space-x-px">
+    <button type="button" class="inline-flex items-center text-body bg-neutral-secondary-medium border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading shadow-xs font-medium leading-5 rounded-s-base text-sm px-4 py-2.5 focus:outline-none">
+      <svg class="w-4 h-4 me-1.5 -ms-0.5 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12l4-4m-4 4 4 4"/></svg>
+      Previous
+    </button>
+    <button type="button" class="inline-flex items-center text-body bg-neutral-secondary-medium border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading shadow-xs font-medium leading-5 rounded-e-base text-sm px-4 py-2.5 focus:outline-none">
+      Next
+      <svg class="w-4 h-4 ms-1.5 -me-0.5 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/></svg>
+    </button>
+  </div>
+</div>
     </div>
+
+
+
     </section>
 
     <script src="alldd.js"></script>
