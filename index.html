@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Who Care, I Care</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- Responsive: ปรับ Padding ของ Navbar ตามขนาดหน้าจอ -->
+    <nav class="p-3 sm:p-4 md:p-6 flex flex-wrap justify-between items-center gap-3 bg-white shadow-md sticky top-0 z-50">
+        <!-- Responsive: ปรับขนาดโลโก้ให้เล็กลงบนมือถือ -->
+        <img src="image/who care I care 4.png" alt="Avatar" class="w-16 h-10 sm:w-20 sm:h-12">
+
+        <!-- Responsive: ซ่อนเมนูบนมือถือ และแสดงตั้งแต่หน้าจอ md (768px) -->
+        <ul class="hidden md:flex gap-4 lg:gap-8 text-[#14466D] justify-end ">
+            <li><a href="index.html" class="hover:border hover:rounded hover:p-3 hover:rounded-[20px] hover:shadow-lg hover:text-[#397B8D] border text-[#397B8D] p-3 rounded-[20px] shadow-lg">Home</a></li>
+            <li><a href="form.html" class="hover:border hover:rounded hover:p-3 hover:rounded-[20px] hover:shadow-lg hover:text-[#397B8D] border border-transparent p-3 transition-all duration-300">My Health</a></li>
+            <li><a href="form.html" class="hover:border hover:rounded hover:p-3 hover:rounded-[20px] hover:shadow-lg hover:text-[#397B8D] border border-transparent p-3 transition-all duration-300">AI Health Assistant</a></li>
+            <li><a href="form.html" class="hover:border hover:rounded hover:p-3 hover:rounded-[20px] hover:shadow-lg hover:text-[#397B8D] border border-transparent p-3 transition-all duration-300">Find Health Care</a></li>
+            <li><a href="form.html" class="hover:border hover:rounded hover:p-3 hover:rounded-[20px] hover:shadow-lg hover:text-[#397B8D] border border-transparent p-3 transition-all duration-300">Health News</a></li>
+        </ul>
+
+        <!-- ระยะห่างปุ่ม repo  -->
+        <div class="relative flex items-center gap-2 sm:gap-4">
+
+            <!-- Responsive: ซ่อนช่อง Search เมื่อหน้าจอเล็กกว่า 640px -->
+            <div class="relative hidden sm:block">
+                <input type="text" placeholder="Search..." class="px-4 pl-10 w-[150px] md:w-[200px] lg:w-[350px] py-2 rounded-[20px] focus:outline-none focus:ring-2 focus:ring-blue-300 border border-gray-300">
+                <!-- ไอคอนแว่นขยาย -->
+                <svg xmlns="http://www.w3.org/2000/svg" 
+                    class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500"
+                    fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <circle cx="11" cy="11" r="7" stroke-width="2"></circle>
+                    <path stroke-width="2" stroke-linecap="round" d="m16 16 4 4"></path>
+                </svg>
+            </div>
+            
+                
+            
+
+            <div class="relative">
+                <img id="avatarButton" type="button" data-dropdown-toggle="userDropdown" data-dropdown-placement="bottom-start" class="w-10 h-9 sm:w-12 sm:h-10 rounded-full cursor-pointer border border-gray-300" src="image/image 7.png" alt="User dropdown">
+            </div>
+
+            <!-- Dropdown menu -->
+            <div id="userDropdown" class="z-10 absolute mt-2 top-full right-0 rounded-[10px] bg-black/40 backdrop-blur-sm border-white/30 hidden text-white border shadow-lg w-44">
+                <div class="px-4 py-3 border-b border-white/20 text-sm">
+                    <div class="font-medium">303 304 306</div>
+                    <div class="truncate">Ds_web@su.ac.th</div>
+                </div>
+                <ul class="p-2 text-sm font-medium" aria-labelledby="avatarButton">
+                    <li><a href="index.html" class="block w-full p-2 hover:bg-white/10 rounded-md">Home</a></li>
+                    <li><a href="#" class="block w-full p-2 hover:bg-white/10 rounded-md">Settings</a></li>
+
+                    <li><a href="#" class="block w-full p-2 hover:bg-white/10 rounded-md">Help</a></li>
+                    <li><a href="#" class="block w-full p-2 hover:bg-white/10 rounded-md">Sign out</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="container">
+
+    <header class="topbar">
+      <a href="#" class="logo">
+        <img src="image/who%20care%20i%20care%204.png" alt="Who Care, I Care">
+      </a>
+      <span class="divider"></span>
+      <span class="tagline">Health Budget Plan</span>
+    </header>
+
+    <h1 class="title">
+      “Care for You,
+      <span class="teal">Anytime”</span>
+    </h1>
+
+    <h2 class="subtitle">ดูแลคุณได้ทุกเวลา</h2>
+
+    <p class="text">
+      เพราะสุขภาพของคุณเป็นสิ่งสำคัญ เราจึงมุ่งมั่นให้การดูแลสุขภาพ
+      เป็นเรื่องง่ายและเข้าถึงได้สำหรับทุกคน ไม่ว่าจะเป็นการค้นหาแพทย์เฉพาะทาง
+      ปรึกษาแพทย์ออนไลน์ หรือจองคิวเข้ารับบริการ คุณก็สามารถเข้าถึงการดูแลที่เหมาะสมได้
+      สะดวกในที่เดียว พร้อมดูแลคุณและคนที่คุณรักในทุกช่วงเวลา
+    </p>
+
+    <div class="trust">
+      <div class="avatars" aria-hidden="true">
+        <span class="avatar a1"></span>
+        <span class="avatar a2"></span>
+        <span class="avatar a3"></span>
+      </div>
+      <div class="trust-info">
+        <strong>Trusted by 10k+ Patients</strong>
+        <span class="stars" aria-label="5 stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        </span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= SEARCH ================= -->
+<section class="search">
+  <div class="container">
+    <form class="card" id="searchForm" novalidate>
+
+      <h3 class="card-title">Find the right care for you</h3>
+      <p class="card-subtitle">ค้นหาแพทย์และบริการสุขภาพที่เหมาะกับคุณ</p>
+
+      <div class="fields">
+        <label class="field" for="keyword">
+          <i class="fa-solid fa-magnifying-glass field-icon" aria-hidden="true"></i>
+          <input type="text" id="keyword" name="keyword" placeholder="Doctor, symptom or hospital" autocomplete="off">
+        </label>
+
+        <label class="field" for="location">
+          <i class="fa-solid fa-location-dot field-icon pin" aria-hidden="true"></i>
+          <input type="text" id="location" name="location" placeholder="Location" autocomplete="off">
+        </label>
+      </div>
+
+      <p class="label">Popular specialties</p>
+      <div class="chips" role="radiogroup" aria-label="Popular specialties">
+        <button type="button" class="chip active" role="radio" aria-checked="true"  data-value="General Practice">General Practice</button>
+        <button type="button" class="chip"        role="radio" aria-checked="false" data-value="Cardiology">Cardiology</button>
+        <button type="button" class="chip"        role="radio" aria-checked="false" data-value="Dermatology">Dermatology</button>
+        <button type="button" class="chip"        role="radio" aria-checked="false" data-value="Dentistry">Dentistry</button>
+      </div>
+
+      <div class="actions">
+        <button type="submit" class="btn" id="findBtn">
+          <span class="btn-text">Find Healthcare <i class="fa-solid fa-arrow-right arrow"></i></span>
+          <span class="spinner" aria-hidden="true"></span>
+        </button>
+        <p class="status" id="formStatus" role="status" aria-live="polite"></p>
+      </div>
+
+    </form>
+  </div>
+</section>
+
+<!-- ================= SPECIALTIES ================= -->
+<section class="specialties">
+  <div class="container">
+
+    <a href="#" class="view-all" id="viewAll">ดูทั้งหมด <i class="fa-solid fa-arrow-right"></i></a>
+
+    <ul class="list">
+      <li>
+        <a href="#" class="item" data-name="กุมารเวช">
+          <span class="icon"><i class="fa-solid fa-baby" aria-hidden="true"></i></span>
+          <span class="name">กุมารเวช</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="item" data-name="จิตเวช">
+          <span class="icon"><i class="fa-solid fa-brain" aria-hidden="true"></i></span>
+          <span class="name">จิตเวช</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="item" data-name="ศัลยกรรม">
+          <span class="icon"><i class="fa-solid fa-user-doctor" aria-hidden="true"></i></span>
+          <span class="name">ศัลยกรรม</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="item" data-name="กระดูก">
+          <span class="icon"><i class="fa-solid fa-bone" aria-hidden="true"></i></span>
+          <span class="name">กระดูก</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="item" data-name="อายุรกรรม">
+          <span class="icon"><i class="fa-solid fa-stethoscope" aria-hidden="true"></i></span>
+          <span class="name">อายุรกรรม</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="item" data-name="สูตินารีเวช">
+          <span class="icon"><i class="fa-solid fa-person-pregnant" aria-hidden="true"></i></span>
+          <span class="name">สูตินารีเวช</span>
+        </a>
+      </li>
+    </ul>
+
+  </div>
+</section>
+
+<!-- ================= HEALTH HUB ================= -->
+<section class="hub">
+  <div class="container hub-wrap">
+    <div class="hub-box">
+
+      <p class="hub-eyebrow">เพื่อนคู่ใจด้านสุขภาพของคุณ</p>
+      <h2 class="hub-title">Your Health, All in One Place<span>.</span></h2>
+      <p class="hub-text">ทำความเข้าใจอาการของคุณ ค้นหาข้อมูลด้านสุขภาพที่เชื่อถือได้ และพบกับการดูแลรักษาที่คุณต้องการ</p>
+
+      <label class="hub-search" for="hubSearch">
+        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+        <input type="text" id="hubSearch" placeholder="Search symptoms, health topics, or hospitals..." autocomplete="off">
+      </label>
+
+      <div class="hub-btns">
+        <a href="#" class="hub-btn primary">Explore My Health <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="#" class="hub-btn outline">Find a Hospital</a>
+      </div>
+
+      <h3 class="hub-question">วันนี้คุณต้องการอะไร?</h3>
+
+      <div class="hub-cards">
+  <a href="#" class="hub-card" data-action="track">
+    <i class="fa-regular fa-calendar-check hub-card-icon" aria-hidden="true"></i>
+    <strong>Track Symptoms</strong>
+    <span>บันทึกอาการของคุณ</span>
+    <i class="fa-solid fa-arrow-right hub-card-arrow" aria-hidden="true"></i>
+  </a>
+
+  <a href="#" class="hub-card" data-action="ai">
+    <i class="fa-regular fa-message hub-card-icon" aria-hidden="true"></i>
+    <strong>Ask AI</strong>
+    <span>สำรวจประเด็นด้านสุขภาพ</span>
+    <i class="fa-solid fa-arrow-right hub-card-arrow" aria-hidden="true"></i>
+  </a>
+
+  <a href="#" class="hub-card" data-action="care">
+    <i class="fa-solid fa-location-dot hub-card-icon" aria-hidden="true"></i>
+    <strong>Find Care</strong>
+    <span>ค้นหาคลินิกใกล้เคียง</span>
+    <i class="fa-solid fa-arrow-right hub-card-arrow" aria-hidden="true"></i>
+  </a>
+</div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ================= STEPS ================= -->
+<section class="steps">
+  <div class="steps-head">
+    <span class="steps-pill">ใช้งานง่าย 4 ขั้นตอน</span>
+    <h2 class="steps-title">จากอาการ สู่การดูแลที่ใช้</h2>
+  </div>
+
+  <ol class="steps-list">
+    <li class="step">
+      <span class="step-num">1</span>
+      <div class="step-body">
+        <h3>บันทึกอาการ</h3>
+        <p>จดอาการประจำวันลงปฏิทินสุขภาพของคุณ</p>
+      </div>
+    </li>
+
+    <li class="step">
+      <span class="step-num">2</span>
+      <div class="step-body">
+        <h3>AI+หมอวินิจฉัย</h3>
+        <p>ได้ผลเบื้องต้นจาก AI และยืนยันโดยแพทย์</p>
+      </div>
+    </li>
+
+    <li class="step">
+      <span class="step-num">3</span>
+      <div class="step-body">
+        <h3>เปรียบเทียบโรงพยาบาล</h3>
+        <p>ดูระยะทาง ราคา และความเชี่ยวชาญเฉพาะโรค</p>
+      </div>
+    </li>
+
+    <li class="step">
+      <span class="step-num">4</span>
+      <div class="step-body">
+        <h3>คำนวณค่าใช้จ่าย</h3>
+        <p>ประเมินงบเบื้องต้น พร้อมแพ็กเกจประกันแนะนำ</p>
+      </div>
+    </li>
+  </ol>
+</section>  
+
+
+
+<!-- ================= FIND YOUR DOCTOR ================= -->
+<section class="doctors" id="doctors">
+  <div class="doctors-inner">
+    <div class="doc-scroll" id="docScroll">
+
+      <header class="doc-head">
+        <h2 class="doc-title">Find your Doctor</h2>
+
+        <div class="doc-row">
+          <p class="doc-sub">
+            ค้นหาตามชื่อ ความเชี่ยวชาญ หรือสถานที่<br>
+            เราจะช่วยให้คุณพบการดูแลที่เหมาะสมที่สุด
+          </p>
+
+          <div class="doc-tools">
+            <label class="doc-search">
+              <input type="text" id="docSearch" placeholder="Try ‘Covid’ or ‘Dr.Beaver’…" autocomplete="off">
+              <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+            </label>
+
+            <div class="doc-filter-wrap">
+              <button type="button" class="doc-filter" id="docFilterBtn" aria-expanded="false">
+                <i class="fa-solid fa-filter" aria-hidden="true"></i> Filter
+              </button>
+              <div class="doc-pop" id="docPop">
+  <label><input type="checkbox" id="fRating"> Rating 4.5+</label>
+  <label><input type="checkbox" id="fPrice"> Price ≤ $250</label>
+</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="doc-chips" id="docChips">
+          <button type="button" class="doc-chip active" data-chip="all" aria-pressed="true">All</button>
+          <button type="button" class="doc-chip" data-chip="today" aria-pressed="false">Available Today</button>
+          <button type="button" class="doc-chip" data-chip="fee" aria-pressed="false">Lowest Fee</button>
+          <button type="button" class="doc-chip" data-chip="exp" aria-pressed="false">Most Experienced</button>
+          <button type="button" class="doc-chip" data-chip="rated" aria-pressed="false">Top Rated</button>
+        </div>
+      </header>
+
+      <div class="doc-grid" id="docGrid"></div>
+      <p class="doc-empty" id="docEmpty" hidden>ไม่พบแพทย์ที่ตรงกับการค้นหา</p>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= LATEST HEALTH UPDATES ================= -->
+<section class="news" id="news">
+  <h2 class="news-title">Latest Health Updates</h2>
+  <div class="news-list" id="newsList"></div>
+</section>
+
+<!-- ================= HEALTHCARE THAT FITS ================= -->
+<section class="fits" id="fits">
+  <div class="fits-card">
+    <svg class="fits-icon" viewBox="0 0 46 47" width="46" height="47" fill="none"
+         stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"
+         aria-hidden="true">
+      <circle class="pin-head" cx="23" cy="9" r="6.5"/>
+      <line class="pin-stem" x1="23" y1="16" x2="23" y2="30"/>
+      <path class="pin-ring" d="M10 29C5 30 3 32 3 34.5C3 39 11 42 23 42C35 42 43 39 43 34.5C43 32 41 30 36 29"/>
+    </svg>
+
+    <h2 class="fits-title">Healthcare that fits your needs</h2>
+    <p class="fits-sub">เปรียบเทียบโรงพยาบาลและคลินิกใกล้เคียง โดยพิจารณาจากบริการ ระยะทาง และค่าใช้จ่ายโดยประมาณ</p>
+  </div>
+</section>
+
+<!-- ================= CHOOSE YOUR PLAN ================= -->
+<section class="plans" id="plans">
+  <h2 class="plans-th">แผนสุขภาพสำหรับคุณ</h2>
+  <p class="plans-en">Choose your plan</p>
+
+  <div class="plans-grid">
+
+    <!-- Basic -->
+    <article class="plan">
+      <h3 class="plan-name">แผนคุ้มครองปกติ</h3>
+      <p class="plan-price">฿ 590 / เดือน</p>
+      <a href="#" class="plan-buy">Buy now</a>
+      <ul class="plan-list">
+        <li><span class="plan-ico"><i class="fa-solid fa-certificate"></i><i class="fa-solid fa-check"></i></span>ปรึกษาแพทย์ออนไลน์</li>
+        <li><span class="plan-ico"><i class="fa-solid fa-certificate"></i><i class="fa-solid fa-check"></i></span>บันทึกประวัติสุขภาพ</li>
+      </ul>
+    </article>
+
+    <!-- Premium -->
+    <article class="plan plan--best">
+      <span class="plan-badge">Best value</span>
+      <h3 class="plan-name">แผนคุ้มครอง Premium</h3>
+      <p class="plan-price">฿ 1,590 / เดือน</p>
+      <a href="#" class="plan-buy">Buy now</a>
+      <ul class="plan-list">
+        <li><span class="plan-ico"><i class="fa-solid fa-certificate"></i><i class="fa-solid fa-check"></i></span>ปรึกษาแพทย์ออนไลน์</li>
+        <li><span class="plan-ico"><i class="fa-solid fa-certificate"></i><i class="fa-solid fa-check"></i></span>บันทึกประวัติสุขภาพ</li>
+        <li><span class="plan-ico"><i class="fa-solid fa-certificate"></i><i class="fa-solid fa-check"></i></span>นัดหมายแพทย์ได้ก่อนใคร</li>
+        <li><span class="plan-ico"><i class="fa-solid fa-certificate"></i><i class="fa-solid fa-check"></i></span>ส่วนลดค่าบริการทางการแพทย์</li>
+      </ul>
+    </article>
+
+    <!-- Plus -->
+    <article class="plan">
+      <h3 class="plan-name">แผนคุ้มครอง Plus</h3>
+      <p class="plan-price">฿ 990 / เดือน</p>
+      <a href="#" class="plan-buy">Buy now</a>
+      <ul class="plan-list">
+        <li><span class="plan-ico"><i class="fa-solid fa-certificate"></i><i class="fa-solid fa-check"></i></span>ปรึกษาแพทย์ออนไลน์</li>
+        <li><span class="plan-ico"><i class="fa-solid fa-certificate"></i><i class="fa-solid fa-check"></i></span>บันทึกประวัติสุขภาพ</li>
+        <li><span class="plan-ico"><i class="fa-solid fa-certificate"></i><i class="fa-solid fa-check"></i></span>ส่วนลดค่าบริการทางการแพทย์</li>
+      </ul>
+    </article>
+
+  </div>
+</section>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
