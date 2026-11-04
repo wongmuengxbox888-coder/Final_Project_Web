@@ -5,28 +5,507 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form health</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet"> 
 </head>
-<body class="bg-gradient-to-r from-blue-500 to-purple-500 min-h-screen">
+<body class="bg-gradient-to-b from-[#C6D3DA] via-[#5AAEAF] to-[#17496D] min-h-screen">
 
-    
-    <nav class="p-6 flex justify-between items-center bg-white shadow-md sticky top-0 z-50">
-        <img src="image/who care I care 4.png" alt="Avatar" class="w-16 h-12 ">
-        <ul class="flex space-x-20 text[#14466D] justify-end">
-            <li><a href="index.html" class="hover:underline">Home</a></li>
-            <li><a href="anatomy.html" class="hover:underline">Anatomy</a></li>
-            <li><a href="form.html" class="hover:underline">Form</a></li>
-            <li><a href="form.html" class="hover:underline">Form</a></li>
-            <li><a href="form.html" class="hover:underline">Form</a></li>
-            <li><a href="form.html" class="hover:underline">Form</a></li>
+    <!-- Responsive: ปรับ Padding ของ Navbar ตามขนาดหน้าจอ -->
+    <nav class="p-3 sm:p-4 md:p-6 flex flex-wrap justify-between items-center gap-3 bg-white shadow-md sticky top-0 z-50">
+        <!-- Responsive: ปรับขนาดโลโก้ให้เล็กลงบนมือถือ -->
+        <img src="image/who care I care 4.png" alt="Avatar" class="w-16 h-10 sm:w-20 sm:h-12">
+
+        
+        <ul class="hidden md:flex gap-4 lg:gap-8 text-[#14466D] justify-end font-['Prompt']">
+            <li><a href="index.html" class="hover:border hover:rounded hover:p-3 hover:rounded-[20px] hover:shadow-lg hover:text-[#397B8D] border border-transparent p-3 transition-all duration-300">Home</a></li>
+            <li><a href="form.html" class="hover:border hover:rounded hover:p-3 hover:rounded-[20px] hover:shadow-lg hover:text-[#397B8D] border border-transparent p-3 transition-all duration-300">My Health</a></li>
+            <li><a href="form.html" class="hover:border hover:rounded hover:p-3 hover:rounded-[20px] hover:shadow-lg hover:text-[#397B8D] border text-[#397B8D] p-3 rounded-[20px] shadow-lg">AI Health Assistant</a></li>
+            <li><a href="mapfeature.html" class="hover:border hover:rounded hover:p-3 hover:rounded-[20px] hover:shadow-lg hover:text-[#397B8D] border border-transparent p-3 transition-all duration-300">Find Health Care</a></li>
+            <li><a href="form.html" class="hover:border hover:rounded hover:p-3 hover:rounded-[20px] hover:shadow-lg hover:text-[#397B8D] border border-transparent p-3 transition-all duration-300">Health News</a></li>
         </ul>
-        <div class="flex items-center space-x-4">
-            <input type="text" placeholder="Search..." class="px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-300">
-            <a href="#" class="text-white hover:underline">Login</a>
-            
-        <img class="w-10 h-10 p-1 rounded-full ring-2 ring-default" src="" alt="Bordered avatar">
 
+        <!-- ระยะห่างปุ่ม repo  -->
+        <div class="relative flex items-center gap-2 sm:gap-4">
+
+            <!-- seach  -->
+            <div class="relative hidden sm:block sm:fa-align-justify-end">
+                <input type="text" placeholder="Search..." class="px-4 pl-10 w-[150px] md:w-[200px] lg:w-[350px] py-2 rounded-[20px] focus:outline-none focus:ring-2 focus:ring-blue-300 border border-gray-300">
+                <!-- ไอคอนแว่นขยาย -->
+                <svg xmlns="http://www.w3.org/2000/svg" 
+                    class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500"
+                    fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <circle cx="11" cy="11" r="7" stroke-width="2"></circle>
+                    <path stroke-width="2" stroke-linecap="round" d="m16 16 4 4"></path>
+                </svg>
+            </div>
             
+                
+            
+
+            <div class="relative">
+                <img id="avatarButton" type="button" data-dropdown-toggle="userDropdown" data-dropdown-placement="bottom-start" class="w-10 h-9 sm:w-12 sm:h-10 rounded-full cursor-pointer border border-gray-300" src="image/image 7.png" alt="User dropdown">
+            </div>
+
+            <!-- Dropdown menu -->
+            <div id="userDropdown" class="z-10 absolute mt-2 top-full right-0 rounded-[10px] bg-black/40 backdrop-blur-sm border-white/30 hidden text-white border shadow-lg w-44">
+                <div class="px-4 py-3 border-b border-white/20 text-sm">
+                    <div class="font-medium">303 304 306</div>
+                    <div class="truncate">Ds_web@su.ac.th</div>
+                </div>
+                <ul class="p-2 text-sm font-medium" aria-labelledby="avatarButton">
+                    <li><a href="index.html" class="block w-full p-2 hover:bg-white/10 rounded-md">Home</a></li>
+                    <li><a href="#" class="block w-full p-2 hover:bg-white/10 rounded-md">Settings</a></li>
+
+                    <li><a href="#" class="block w-full p-2 hover:bg-white/10 rounded-md">Help</a></li>
+                    <li><a href="#" class="block w-full p-2 hover:bg-white/10 rounded-md">Sign out</a></li>
+                </ul>
+            </div>
+
         </div>
     </nav>
+
+    
+    <section class="min-h-screen p-3 sm:p-4 md:p-8 border ">
+        <div class="bg-white/80 rounded-[20px] shadow-2xl min-h-screen p-4 sm:p-6 md:p-8">
+            <div class="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 justify-center">
+
+                <!-- กำหนดขนาดโลโก้ตามหน้าจอ -->
+                <img src="image/who care I care 4.png" alt="" class="w-20 sm:w-28 md:w-32">
+
+                <div class="text-center sm:text-left">
+                    <!-- Repo ลดขนาดหัวข้อบนมือถือ -->
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-[#14466D]">
+                        Health Form
+                    </h1>
+
+                    <!-- repo phone  -->
+                    <p class="mt-2 text-gray-600 text-base sm:text-xl md:text-[26px]">
+                        กรุณากรอกข้อมูลสุขภาพของคุณ
+                    </p>
+                </div>
+
+            </div>
+            <div class="grid grid-cols-3 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5 md:gap-6 mt-10 border-t border-gray-300 cursor-pointer transition-all duration-300">
+                
+                <div class="w-126 h-[14px] bg-[#397B8D] border border-gray-300 rounded-lg shadow-md  mt-4 "></div>
+                <div class="w-126 h-[14px] bg-white border border-gray-300 rounded-lg shadow-md mt-4 hover:bg-[#397B8D] transition-all duration-200"></div>
+                <div class="w-126 h-[14px] bg-white border border-gray-300 rounded-lg shadow-md  mt-4 hover:bg-[#397B8D] transition-all duration-200"></div>
+            </div>
+            <p class="fa-bold text-[24px] mt-6">ขั้นตอนที่ 1 จาก 3 ส่วน;</p>
+
+            <!-- กล่อง เล้ก input -->
+            <h2 class="mt-[22px] text-[20px] text-bold">1. ข้อมูลทั่วไป</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
+                
+
+                <div>
+                    <p class="mt-4 sm:mt-[28px] text-[#14466D]">ชื่อจริง</p>
+                    <input type="text" placeholder="กรอกชื่อของคุณ" class="mt-[6px] w-full rounded-lg bg-white text-gray-900 placeholder-gray-400 shadow-md border border-gray-100 px-3 py-3 sm:py-4 text-sm ">
+                </div>
+
+                <div>
+                    <p class="mt-4 sm:mt-[28px] text-[#14466D]">ชื่อกลาง</p>
+                    <input type="text" placeholder="กรอกชื่อกลางของคุณ" class="mt-[6px] w-full rounded-lg bg-white text-gray-900 placeholder-gray-400 shadow-md border border-gray-100 px-3 py-3 sm:py-4 text-sm ">
+                </div>
+
+                <div>
+                    <p class="mt-4 sm:mt-[28px] text-[#14466D]">นามสกุล</p>
+                    <input type="text" placeholder="กรอกนามสกุลของคุณ" class="mt-[6px] w-full rounded-lg bg-white text-gray-900 placeholder-gray-400 shadow-md border border-gray-100 px-3 py-3 sm:py-4 text-sm ">
+                </div>
+            </div>
+            <div class="mt-6">
+                <p class="sm:mt-[28px] text-[#14466D]">ที่อยู่อาศัย</p>
+                <!-- textarea ใช้เพื่อไม่ให้ placeholder ไปอยุ่กลาง -->
+                    <textarea type="text" placeholder="กรอกที่อยู่" class="mt-[6px] w-full h-[200px] rounded-lg bg-white text-gray-900 placeholder-gray-400 shadow-md border border-gray-100 px-3 py-3 sm:py-4 text-sm text-sm "></textarea>
+            </div>
+
+    <div class="grid  sm:grid-cols-2 md:grid-cols-6 gap-4 sm:gap-5 md:gap-6  ">
+        <div class="md:col-span-1">
+             <p class="mt-4 sm:mt-[28px] text-[#14466D]">อายุ</p>
+              <input type="text" placeholder="กรอกอายุ" class="mt-[6px] w-full rounded-lg bg-white text-gray-900 placeholder-gray-400 shadow-md border border-gray-100 px-3 py-3 sm:py-4 text-sm">
+        </div>
+
+        <div class="md:col-span-1">
+              <p class="mt-4 sm:mt-[28px] text-[#14466D]">น้ำหนัก</p>
+               <input type="text" placeholder="กรอกน้ำหนัก" class="mt-[6px] w-full rounded-lg bg-white text-gray-900 placeholder-gray-400 shadow-md border border-gray-100 px-3 py-3 sm:py-4 text-sm">
+          </div>
+
+         <div class="md:col-span-1">
+               <p class="mt-4 sm:mt-[28px] text-[#14466D]">ส่วนสูง</p>
+              <input type="text" placeholder="กรอกส่วนสูง" class="mt-[6px] w-full rounded-lg bg-white text-gray-900 placeholder-gray-400 shadow-md border border-gray-100 px-3 py-3 sm:py-4 text-sm">
+         </div>
+        <div class="md:col-span-1">
+             <p class="mt-4 sm:mt-[28px] text-[#14466D]">เบอร์โทรศัพท์</p>
+             <input type="text" placeholder="กรอกเบอร์โทรศัพท์" class="mt-[6px] w-full rounded-lg bg-white text-gray-900 placeholder-gray-400 shadow-md border border-gray-100 px-3 py-3 sm:py-4 text-sm">
+         </div>
+        <div class="md:col-span-2">
+             <p class="mt-4 sm:mt-[28px] text-[#14466D]">อีเมล/Email</p>
+             <input type="text" placeholder="กรอกอีเมล" class="mt-[6px] w-full rounded-lg bg-white text-gray-900 placeholder-gray-400 shadow-md border border-gray-100 px-3 py-3 sm:py-4 text-sm">
+        </div>
+        </div>
+        <div class="border-t border-gray-400 mt-10">
+            <p class="text-gray-400 mt-4">เพศกำเนิด(ถ้าเกี่ยวข้องกับการประเมิน)</p>
+            
+            <!-- เพศ radio  -->
+                
+        <h2 class="mb-4 font-semibold text-heading mt-4 text-[24px]">เพศกำเนิด</h2>
+            <ul class="items-center w-full text-sm font-medium text-heading bg-neutral-primary-soft  rounded-lg sm:flex">
+                <li class="w-full  border-black rounded-lg ">
+            <div class="flex items-center ps-3 ">
+                <input id="horizontal-list-radio-license" type="radio" value="" name="list-radio" class="w-6 h-6 border-black ">
+                <label for="horizontal-list-radio-license" class="w-full py-3 select-none ms-2 text-sm font-medium text-heading">ผู้ชาย 🧍‍♂️</label>
+            </div>
+        </li>
+        <li class="w-full  ">
+            <div class="flex items-center ps-3">
+                <input id="horizontal-list-radio-id" type="radio" value="" name="list-radio" class="w-6 h-6 ">
+                <label for="horizontal-list-radio-id" class="w-full py-3 select-none ms-2 text-sm font-medium text-heading">ผู้หญิง 🧍‍♀️</label>
+            </div>
+        </li>
+        <li class="w-full ">
+            <div class="flex items-center ps-3">
+                <input id="horizontal-list-radio-military" type="radio" value="" name="list-radio" class="w-6 h-6 ">
+                <label for="horizontal-list-radio-military" class="w-full py-3 select-none ms-2 text-sm font-medium text-heading">LGBTQ+ 🏳️‍🌈</label>
+            </div>
+        </li>
+        <li class="w-full ">
+            <div class="flex items-center ps-3">
+                <input id="horizontal-list-radio-passport" type="radio" value="" name="list-radio" class="w-6 h-6 ">
+                <label for="horizontal-list-radio-passport" class="w-full py-3 select-none ms-2 text-sm font-medium text-heading">ไม่ระบุเพศสภาพ</label>
+            </div>
+        </li>
+    </ul>
+
+            </div>
+            <div class="mt-8">
+            <h1 class="text-[24px] font-bold">
+                2. ประวัติสุขภาพ
+            </h1>
+
+            <p class="mt-2 text-gray-500">
+                มีโรคประจำตัวหรือโรคที่เคยได้รับการวินิจฉัยหรือไม่? (เลือกได้หลายข้อ)
+            </p>
+
+            <!-- Checkbox 2 คอลัมน์ -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+
+            <!-- ฝั่งซ้าย -->
+            <div class="flex flex-col gap-6">
+
+                <label class="flex items-center gap-2">
+                     <input type="checkbox" class="w-5 h-5">
+                     เบาหวาน
+                </label>
+
+                <label class="flex items-center gap-2">
+                    <input type="checkbox" class="w-5 h-5">
+                    ประวัติ
+                </label>
+
+                <label class="flex items-center gap-2">
+                    <input type="checkbox" class="w-5 h-5">
+                    ความดันโลหิตสูง
+                </label>
+
+                <label class="flex items-center gap-2">
+                    <input type="checkbox" class="w-5 h-5">
+                    หอบหืด
+                </label>
+                <label class="flex items-center gap-2">
+                      <input type="checkbox" class="w-5 h-5">
+                 ไขมันในเลือดสูง
+                </label>
+
+                <label class="flex items-center gap-2">
+                    <input type="checkbox" class="w-5 h-5">
+                    ไตเรื้อรัง
+                </label>
+                <label class="flex items-center gap-2">
+                    <input type="checkbox" class="w-5 h-5">
+                    ปอดรั่ว
+                </label>
+
+                <label class="flex items-center gap-2">
+                    <input type="checkbox" class="w-5 h-5">
+                    ภูมิแพ้
+                </label>
+
+            </div>
+        <!-- ฝั่งขวา -->
+            <div class="flex flex-col gap-6">
+
+                <label class="flex items-center gap-2">
+                      <input type="checkbox" class="w-5 h-5">
+                 พาร์กินสัน
+                </label>
+
+                <label class="flex items-center gap-2">
+                    <input type="checkbox" class="w-5 h-5">
+                    ตับอักเสบ
+                </label>
+                <label class="flex items-center gap-2">
+                    <input type="checkbox" class="w-5 h-5">
+                    กรดไหลย้อน
+                </label>
+
+                <label class="flex items-center gap-2">
+                    <input type="checkbox" class="w-5 h-5">
+                    ไทรอยด์เป็นพิษ
+                </label>
+                <label class="flex items-center gap-2">
+                      <input type="checkbox" class="w-5 h-5">
+                 ไมเกรน
+                </label>
+
+                <label class="flex items-center gap-2">
+                    <input type="checkbox" class="w-5 h-5">
+                    ลมชัก
+                </label>
+                <label class="flex items-center gap-2">
+                    <input type="checkbox" class="w-5 h-5">
+                    สะเก็ดเงิน
+                </label>
+
+                <label class="flex items-center gap-2">
+                    <input type="checkbox" class="w-5 h-5">
+                    ไม่มี . . . 
+                </label>
+                </div>
+            </div>
+            <div class="mt-8">
+            <h1 class="text-[24px] font-bold">
+                2.1 ประวัติแพ้ยา
+            </h1>
+
+            <p class="mt-2 text-gray-500">
+                มีประวัติการแพ้ยาจากแพทย์หรือรู้ตัวเอง(เลือกได้หลายข้อ)
+            </p>
+
+            <!--  Checkbox -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+            <div class="flex flex-col gap-6">
+
+                <label class="flex items-center gap-2">
+                     <input type="radio" name="choice" class="w-5 h-5">
+                     checkbox1
+                </label>
+
+                <label class="flex items-center gap-2">
+                    <input type="radio" name="choice" class="w-5 h-5">
+                    checkbox2
+                </label>
+
+                <label class="flex items-center gap-2">
+                    <input type="radio" name="choice" class="w-5 h-5">
+                    checkbox3
+                </label>
+            </div>
+        </div>
+        <div class="mt-6">
+                <p class="sm:mt-[28px] text-[#14466D]">รายละเอียกเกี่ยวกับการแพ้ยาของคุณ</p>
+                <!-- textarea ใช้เพื่อไม่ให้ placeholder ไปอยุ่กลาง -->
+                    <textarea type="text" placeholder="กรอกประวัติแพ้ยา . . ." class="mt-[6px] w-full h-[200px] rounded-lg bg-white text-gray-900 placeholder-gray-400 shadow-md border border-gray-100 px-3 py-3 sm:py-4 text-sm text-sm "></textarea>
+            </div>
+
+            <div class="border-t border-gray-400 mt-8"></div>
+                <h1 class="text-[24px] font-bold mt-6">3. อาการที่กำลังเป็น</h1>
+                <p class="text-gray-500 mt-2">เลือกอาการหลักที่ต้องการประเมิน (เลือกได้หลายข้อ)</p>
+            <!-- 3 อาการ-->
+             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+
+            <!-- ฝั่งซ้าย -->
+            <div class="flex flex-col gap-6">
+
+                <label class="flex items-center gap-2">
+                     <input type="checkbox" class="w-5 h-5">
+                     โรคเบาหวาน
+                </label>
+
+                <label class="flex items-center gap-2">
+                    <input type="checkbox" class="w-5 h-5">
+                    โรคความดันโลหิตสูง
+                </label>
+
+                <label class="flex items-center gap-2">
+                    <input type="checkbox" class="w-5 h-5">
+                    โรคไข้เลือดออก
+                </label>
+
+                <label class="flex items-center gap-2">
+                    <input type="checkbox" class="w-5 h-5">
+                    โรคมะเร็งปอด
+                </label>
+                <label class="flex items-center gap-2">
+                      <input type="checkbox" class="w-5 h-5">
+                 โรคหอบหืด
+                </label>
+
+                <label class="flex items-center gap-2">
+                    <input type="checkbox" class="w-5 h-5">
+                    ไตวาย
+                </label>
+                <label class="flex items-center gap-2">
+                    <input type="checkbox" class="w-5 h-5">
+                    โรคตับอักเสบ
+                </label>
+
+                <label class="flex items-center gap-2">
+                    <input type="checkbox" class="w-5 h-5">
+                    โรคโลหิตจาง
+                </label>
+
+            </div>
+        <!-- ฝั่งขวา -->
+            <div class="flex flex-col gap-6">
+
+                <label class="flex items-center gap-2">
+                      <input type="checkbox" class="w-5 h-5">
+                 โรคหัวใจ
+                </label>
+
+                <label class="flex items-center gap-2">
+                    <input type="checkbox" class="w-5 h-5">
+                    โรคหัวใจขาดเลือด
+                </label>
+                <label class="flex items-center gap-2">
+                    <input type="checkbox" class="w-5 h-5">
+                    โรคอัลไซเมอร์
+                </label>
+
+                <label class="flex items-center gap-2">
+                    <input type="checkbox" class="w-5 h-5">
+                    โรคธาลัสซีเมีย
+                </label>
+                <label class="flex items-center gap-2">
+                      <input type="checkbox" class="w-5 h-5">
+                 โรคสะเก็ดเงิน
+                </label>
+
+                <label class="flex items-center gap-2">
+                    <input type="checkbox" class="w-5 h-5">
+                    โรคลมชัก
+                </label>
+                <label class="flex items-center gap-2">
+                    <input type="checkbox" class="w-5 h-5">
+                    โรคไทรอยเป็นพิษ
+                </label>
+
+                <label class="flex items-center gap-2">
+                    <input type="checkbox" class="w-5 h-5">
+                    โรคปอดบวม
+                </label>
+                
+                </div>
+            </div>
+            <div class="mt-6">
+                <p class="sm:mt-[28px] text-[#14466D]">รายละเอียดเพิ่มเติม</p>
+                <!-- textarea ใช้เพื่อไม่ให้ placeholder ไปอยุ่กลาง -->
+                    <textarea type="text" placeholder="กรอกอาการประวัติ . . ." class="mt-[6px] w-full h-[200px] rounded-lg bg-white text-gray-900 placeholder-gray-400 shadow-md border border-gray-100 px-3 py-3 sm:py-4 text-sm text-sm "></textarea>
+            </div>
+        </div>
+        <!-- slide  -->
+        <div class="mt-5">
+
+    <label class="block mb-4">
+        ระดับความรุนแรงของอาการ:
+        <span id="number">0</span> / 100
+    </label>
+        </div>
+                <input id="slider" type="range" value="0" class="w-full h-2 mb-6 bg-neutral-quaternary rounded-full appearance-none cursor-pointer">
+            </div>
+            <div class="mt-4">
+            <h1 class="text-[24px] font-bold">
+                4. เริ่มมีอาการเมื่อไหร่
+            </h1>
+
+            <p class="mt-2 text-gray-500">
+                มีประวัติการแพ้ยาจากแพทย์หรือรู้ตัวเอง(เลือกได้หลายข้อ)
+            </p>
+
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+            <div class="flex flex-col gap-6">
+
+                <label class="flex items-center gap-2">
+                     <input type="radio" name="choice" class="w-5 h-5">
+                     แพ้ยา
+                </label>
+
+                <label class="flex items-center gap-2">
+                    <input type="radio" name="choice" class="w-5 h-5">
+                    มีประวัติการแพ้ยา(กรอกลงในช่องด้านล่าง)
+                </label>
+
+                <label class="flex items-center gap-2">
+                    <input type="radio" name="choice" class="w-5 h-5">
+                    ไม่ทราบประวัติการแพ้ยา
+                </label>
+            </div>
+        </div>
+        </div>
+        <!-- alert  -->
+        <div class="mt-4">
+            
+            <div  class="p-4 mb-4 text-sm text-fg-brand-strong rounded-base bg-brand-softer border border-brand-subtle rounded-lg bg-[#FFF2C2]" role="alert">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center text-red-600">
+                         <svg class="w-8 h-8 shrink-0 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 11h2v5m-2 0h4m-2.592-8.5h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
+                        
+                         <h3 class="font-large text-red-600 underline hover:text-red-800 cursor-pointer">This is a info alert</h3>
+            </div>
+            <button type="button" data-dismiss-target="#alert-additional-content-1" aria-label="Close" class="ms-auto -mx-1.5 -my-1.5 rounded focus:ring-2 focus:ring-brand-medium hover:bg-brand-soft inline-flex items-center justify-center h-8 w-8 shrink-0">
+                    <span class="sr-only">Close</span>
+                    <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 17.94 6M18 18 6.06 6"/></svg>
+                    </button>
+                </div>
+                <div class="mt-2 mb-4 hover:underline">
+                 More info about this info alert goes here. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.
+                </div>
+                <button type="button" class="hover:bg-gray-600 rounded-[10px] text-gray-900 bg-black text-black-500 inline-flex items-center  text-white bg-brand hover:bg-brand-strong box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-xs px-3 py-1.5 focus:outline-none">
+                    <svg class="w-3.5 h-3.5 me-1.5 bg-black-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="white" stroke-width="2" d="M21 12c0 1.2-4.03 6-9 6s-9-4.8-9-6c0-1.2 4.03-6 9-6s9 4.8 9 6Z"/><path stroke="currentColor" stroke-width="2" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/></svg>
+                    <p class="text-white  text-[16px] ">View more</p>
+                </button>
+                </div>
+            </div>
+            <div class="grid grid-cols-3 gap-3">
+                <button type="button" class="w-full text-white bg-brand hover:bg-brand-strong rounded-base text-sm px-4 py-2.5 bg-black shadow-lg rounded-[12px] transition-all duration-200 ease-in-out hover:scale-105 hover:shadow-lg">
+                    <p>cancel</p>
+                </button>
+
+                <button type="button" class="w-full text-black bg-brand hover:bg-brand-strong rounded-base text-sm px-4 py-2.5 bg-gray-200 shadow-lg rounded-[12px] transition-all duration-200 ease-in-out hover:scale-105 hover:shadow-lg">
+                    <p>reset form </p>
+                </button>
+
+                <button type="button" class="w-full text-white bg-brand hover:bg-brand-strong rounded-base text-sm px-4 py-2.5 bg-[#4B939C] rounded-[12px] shadow-lg transition-all duration-200 ease-in-out hover:scale-105 hover:shadow-lg">
+                     <p class="">next page -></p>
+                </button>
+            </div>
+        <!-- doc tailwind -->
+    <div class="flex flex-col items-center mt-10">
+      <span class="text-sm text-body">
+        Showing now<span class="font-semibold text-heading">1</span> to <span class="font-semibold text-heading">3</span> of <span class="font-semibold text-heading">3</span> Entries
+    </span>
+        <div class="inline-flex mt-4 -space-x-px">
+        <button type="button" class="inline-flex items-center text-body bg-neutral-secondary-medium border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading shadow-xs font-medium leading-5 rounded-s-base text-sm px-4 py-2.5 focus:outline-none">
+            <svg class="w-4 h-4 me-1.5 -ms-0.5 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12l4-4m-4 4 4 4"/></svg>
+        Previous
+        </button>
+        <button type="button" class="inline-flex items-center text-body bg-neutral-secondary-medium border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading shadow-xs font-medium leading-5 rounded-e-base text-sm px-4 py-2.5 focus:outline-none">
+         Next
+             <svg class="w-4 h-4 ms-1.5 -me-0.5 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/></svg>
+        </button>
+          </div>
+          
+        </div>
+
+    </div>
+    
+
+
+
+    </section>
+
+    <script src="alldd.js"></script>
 </body>
 </html>
