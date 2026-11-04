@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Health | W+</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="my-health.css" />
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+
+ 
+  <nav class="p-3 sm:p-4 md:p-6 flex flex-wrap justify-between items-center gap-3 bg-white shadow-md sticky top-0 z-50">
+    <img src="image/who care I care 4.png" alt="Avatar" class="w-16 h-10 sm:w-20 sm:h-12">
+
+    <ul class="hidden md:flex gap-4 lg:gap-8 text-[#14466D] justify-end ">
+      <li><a href="index.html" class="hover:border hover:rounded hover:p-3 hover:rounded-[20px] hover:shadow-lg hover:text-[#397B8D] border border-transparent p-3 transition-all duration-300">Home</a></li>
+      <li><a href="my-health.html" class="hover:border hover:rounded hover:p-3 hover:rounded-[20px] hover:shadow-lg hover:text-[#397B8D] border text-[#397B8D] p-3 rounded-[20px] shadow-lg" aria-current="page">My Health</a></li>
+      <li><a href="ai-assistant.html" class="hover:border hover:rounded hover:p-3 hover:rounded-[20px] hover:shadow-lg hover:text-[#397B8D] border border-transparent p-3 transition-all duration-300">AI Health Assistant</a></li>
+      <li><a href="form.html" class="hover:border hover:rounded hover:p-3 hover:rounded-[20px] hover:shadow-lg hover:text-[#397B8D] border border-transparent p-3 transition-all duration-300">Find Health Care</a></li>
+      <li><a href="form.html" class="hover:border hover:rounded hover:p-3 hover:rounded-[20px] hover:shadow-lg hover:text-[#397B8D] border border-transparent p-3 transition-all duration-300">Health News</a></li>
+    </ul>
+
+    <div class="relative flex items-center gap-2 sm:gap-4">
+      <div class="relative hidden sm:block">
+        <input type="text" placeholder="Search..." class="px-4 pl-10 w-[150px] md:w-[200px] lg:w-[350px] py-2 rounded-[20px] focus:outline-none focus:ring-2 focus:ring-blue-300 border border-gray-300">
+        <svg xmlns="http://www.w3.org/2000/svg"
+            class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500"
+            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <circle cx="11" cy="11" r="7" stroke-width="2"></circle>
+          <path stroke-width="2" stroke-linecap="round" d="m16 16 4 4"></path>
+        </svg>
+      </div>
+
+      <div class="relative">
+        <img id="avatarButton" type="button" data-dropdown-toggle="userDropdown" data-dropdown-placement="bottom-start" class="w-10 h-9 sm:w-12 sm:h-10 rounded-full cursor-pointer border border-gray-300" src="image/image 7.png" alt="User dropdown">
+      </div>
+
+      <!-- Dropdown menu -->
+      <div id="userDropdown" class="z-10 absolute mt-2 top-full right-0 rounded-[10px] bg-black/40 backdrop-blur-sm border-white/30 hidden text-white border shadow-lg w-44">
+        <div class="px-4 py-3 border-b border-white/20 text-sm">
+          <div class="font-medium">303 304 306</div>
+          <div class="truncate">Ds_web@su.ac.th</div>
+        </div>
+        <ul class="p-2 text-sm font-medium" aria-labelledby="avatarButton">
+          <li><a href="index.html" class="block w-full p-2 hover:bg-white/10 rounded-md">Home</a></li>
+          <li><a href="#" class="block w-full p-2 hover:bg-white/10 rounded-md">Settings</a></li>
+          <li><a href="#" class="block w-full p-2 hover:bg-white/10 rounded-md">Help</a></li>
+          <li><a href="#" class="block w-full p-2 hover:bg-white/10 rounded-md">Sign out</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="page">
+
+    <!-- ============ DASHBOARD GRID ============ -->
+    <section class="dashboard">
+
+      <!-- ---- Column 1: calendar + actions ---- -->
+      <div class="col col-left">
+        <div class="card calendar">
+          <div class="cal-presets">
+            <button class="chip" data-preset="today">Today</button>
+            <button class="chip" data-preset="week">Last 8 days</button>
+            <button class="chip" data-preset="month">Last month</button>
+            <button class="chip chip-icon" id="calToggle" aria-label="Toggle month list">
+              <svg viewBox="0 0 12 12" width="12" height="12"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+            </button>
+          </div>
+
+          <div class="cal-body">
+            <div class="cal-main">
+              <div class="cal-grid cal-head" aria-hidden="true">
+                <span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
+              </div>
+              <div class="cal-grid" id="calDays" role="grid" aria-label="Calendar days"></div>
+            </div>
+            <ul class="cal-months" id="calMonths" aria-label="Month"></ul>
+          </div>
+
+          <div class="cal-actions">
+            <button class="btn btn-ghost" id="calClear">Clear</button>
+            <button class="btn btn-solid" id="calApply">Apply</button>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button class="action action-primary" id="btnNew">
+            <svg viewBox="0 0 40 40" width="38" height="38"><circle cx="20" cy="20" r="15" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 12v16M12 20h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <span><strong>บันทึกอาการใหม่</strong><small>เริ่มตรวจสอบอาการของคุณ</small></span>
+          </button>
+          <button class="action action-outline" id="btnHistory">
+            <svg viewBox="0 0 40 40" width="38" height="38"><path d="M11 6h14l6 6v22H11z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M16 20h10M16 26h10M16 14h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <span><strong>ดูประวัติทั้งหมด</strong><small>ตรวจสอบข้อมูลย้อนหลัง</small></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- ---- Column 2: diagnosis + summary ---- -->
+      <div class="col col-mid">
+        <div class="card diagnosis">
+          <h2 class="card-title teal">รับผลวินิจฉัยจากหมอหรือ AI</h2>
+          <p class="card-sub teal">เลือกวิธีที่เหมาะกับคุณ เพื่อรับคำแนะนำเกี่ยวกับสุขภาพ</p>
+
+          <div class="diag-options">
+            <article class="diag diag-ai">
+              <div class="diag-head">
+                <span class="diag-icon">
+                  <svg viewBox="0 0 32 32" width="28" height="28"><rect x="6" y="10" width="20" height="14" rx="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="17" r="1.8" fill="currentColor"/><circle cx="20" cy="17" r="1.8" fill="currentColor"/><path d="M16 10V6" stroke="currentColor" stroke-width="2"/></svg>
+                </span>
+                <div>
+                  <h3>AI ประเมินเบื้องต้น</h3>
+                  <span class="pill">รวดเร็ว</span>
+                </div>
+              </div>
+              <p>รับคำแนะนำเบื้องต้นจาก AI<br />พร้อมข้อมูลสุขภาพที่เกี่ยวข้อง</p>
+              <button class="diag-btn" data-go="ai">เริ่มประเมินจาก AI <span aria-hidden="true">→</span></button>
+            </article>
+
+            <article class="diag diag-doc">
+              <div class="diag-head">
+                <span class="diag-icon dark">
+                  <svg viewBox="0 0 32 32" width="28" height="28"><path d="M9 5v8a5 5 0 0010 0V5M14 18v3a5 5 0 0010 0v-2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="24" cy="16" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                </span>
+                <div>
+                  <h3>ปรึกษาแพทย์</h3>
+                  <span class="pill dark">แม่นยำกว่า</span>
+                </div>
+              </div>
+              <p>ให้แพทย์ตรวจวินิจฉัยอย่างละเอียด<br />ผ่านวิดีโอคอลหรือที่โรงพยาบาล</p>
+              <button class="diag-btn dark" data-go="doctor">นัดหมายแพทย์ <span aria-hidden="true">→</span></button>
+            </article>
+          </div>
+
+          <p class="note"><span class="note-i">i</span> ผลที่ได้จาก AI เป็นเพียงข้อมูลเบื้องต้น ไม่สามารถใช้แทนการวินิจฉัยจากแพทย์ได้</p>
+        </div>
+
+        <div class="card summary">
+          <div class="summary-top">
+            <h2 class="card-title teal">สรุปสุขภาพของคุณ</h2>
+            <span class="updated teal">อัปเดตล่าสุด <span id="updatedDate">14 มี.ค.2569</span>
+              <button class="refresh" id="btnRefresh" aria-label="Refresh">
+                <svg viewBox="0 0 16 16" width="14" height="14"><path d="M13 8a5 5 0 11-1.6-3.7M13 2v3h-3" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+              </button>
+            </span>
+          </div>
+
+          <div class="latest">
+            <span class="face">
+              <svg viewBox="0 0 40 40" width="46" height="46"><circle cx="20" cy="20" r="18" fill="currentColor"/><circle cx="14" cy="17" r="2" fill="#fff"/><circle cx="26" cy="17" r="2" fill="#fff"/><path d="M13 26c4 3 10 3 14 0" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+            </span>
+            <div>
+              <small class="teal">อาการล่าสุด</small>
+              <div class="latest-title teal" id="latestTitle">ปวดหัวเล็กน้อย</div>
+              <span class="badge badge-mild" id="latestBadge">ไม่รุนแรง</span>
+            </div>
+          </div>
+
+          <div class="history-head">
+            <h3>ประวัติอาการล่าสุด</h3>
+            <a href="#" class="link-all" id="linkAllHistory">ดูทั้งหมด →</a>
+          </div>
+          <p class="filter-note" id="filterNote" hidden><span id="filterText"></span> <button type="button" id="filterClear">ล้างตัวกรอง</button></p>
+          <table class="history" id="historyTable">
+            <caption class="sr-only">ประวัติอาการล่าสุด</caption>
+            <tbody></tbody>
+          </table>
+          <p class="save-msg" id="saveMsg" role="status" aria-live="polite"></p>
+        </div>
+      </div>
+
+      <!-- ---- Column 3: cost calculator + hospitals ---- -->
+      <div class="col col-right">
+        <div class="card cost">
+          <h2 class="cost-title">คำนวณค่ารักษา</h2>
+          <p class="cost-label bold">ประมาณค่าใช้จ่ายเบื้องต้น</p>
+
+          <label class="cost-label" for="treatType">ประเภทการรักษา</label>
+          <div class="select-wrap">
+            <select id="treatType" class="field"></select>
+          </div>
+
+          <label class="cost-label" for="budget">งบประมาณ (บาท)</label>
+          <div class="field input-unit">
+            <input id="budget" type="number" min="0" step="100" value="2000" />
+            <span>บาท</span>
+          </div>
+
+          <div class="result">
+            <small>ค่าใช้จ่ายโดยประมาณ</small>
+            <div class="result-num" id="estimate">2,000 บาท</div>
+            <div class="result-hint" id="estimateHint"></div>
+          </div>
+
+          <div class="pay">
+            <p class="pay-title">วิธีชำระเงิน</p>
+            <div class="pay-toggle" role="radiogroup" aria-label="วิธีชำระเงิน">
+              <button class="pay-opt active" data-pay="insurance" role="radio" aria-checked="true">
+                <svg viewBox="0 0 16 16" width="14" height="14"><path d="M8 1.5l5.5 2v4c0 3.2-2.3 5.7-5.5 7-3.2-1.3-5.5-3.8-5.5-7v-4z" fill="none" stroke="currentColor" stroke-width="1.3"/></svg>
+                ประกันสุขภาพ
+              </button>
+              <button class="pay-opt" data-pay="self" role="radio" aria-checked="false">
+                <svg viewBox="0 0 16 16" width="14" height="14"><rect x="1.5" y="4" width="13" height="8.5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="8" cy="8.2" r="2" fill="none" stroke="currentColor" stroke-width="1.3"/></svg>
+                ชำระเอง
+              </button>
+            </div>
+
+            <div id="insuranceBox">
+              <p class="pay-sub">เลือกประกันของคุณ</p>
+              <div class="select-wrap small">
+                <select id="package" class="field small"></select>
+              </div>
+              <div class="pay-radios">
+                <label><input type="radio" name="insMode" value="pkg" checked /> เลือกประกันของคุณ</label>
+                <label><input type="radio" name="insMode" value="code" /> กรอกรหัส</label>
+              </div>
+              <input id="insCode" class="field small" type="text" placeholder="#กรอกรหัส เลขประกัน" />
+            </div>
+          </div>
+
+          <button class="btn-confirm" id="btnConfirm">ยืนยัน</button>
+          <p class="toast" id="costToast" role="status" aria-live="polite"></p>
+        </div>
+
+        <div class="card hospitals">
+          <div class="hosp-top">
+            <h2>โรงพยาบาลแนะนำ</h2>
+            <a href="#" class="link-all">ดูทั้งหมด →</a>
+          </div>
+          <ul id="hospList"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SYMPTOM CHECKER ============ -->
+    <section class="checker" aria-labelledby="checkerTitle">
+      <h1 id="checkerTitle">Symptom Checker</h1>
+      <p class="checker-sub">Understand your symptoms</p>
+
+      <div class="checker-body">
+        <div class="body-view" id="bodyView">
+          <!-- รูปจำลอง: แสดงเฉพาะตอนยังไม่มีไฟล์โมเดล -->
+          <svg id="bodyFallback" viewBox="0 0 200 480" height="480" aria-label="Human body placeholder">
+            <g fill="#e8a58f" stroke="#b9533b" stroke-width="2" stroke-linejoin="round">
+              <ellipse cx="100" cy="36" rx="22" ry="28"/>
+              <path d="M78 66h44l4 12c20 4 38 10 44 28l6 90-16 4-4-62-10 4 4 90-8 130-24 4-8-110-8 110-24-4-8-130 4-90-10-4-4 62-16-4 6-90c6-18 24-24 44-28z"/>
+            </g>
+          </svg>
+          <div id="bodyCanvas" class="body-canvas" aria-label="3D anatomy model"></div>
+          <div class="hold" id="holdHint">hold to move</div>
+          <p class="model-msg" id="modelMsg" hidden></p>
+          <button type="button" class="spin" id="spinBtn" aria-pressed="false">spin 360</button>
+        </div>
+
+        <form class="checker-form" id="checkerForm" novalidate>
+          <h2>Identify possible consition</h2>
+
+          <div class="row-2">
+            <div class="fld">
+              <label for="age">Age</label>
+              <div class="select-wrap tiny"><select id="age" class="field"></select></div>
+            </div>
+            <fieldset class="fld gender">
+              <legend>Gender</legend>
+              <label class="radio"><input type="radio" name="gender" value="male" checked /> <span></span> Male</label>
+              <label class="radio"><input type="radio" name="gender" value="female" /> <span></span> Female</label>
+            </fieldset>
+          </div>
+
+          <div class="row-hw">
+            <label for="height">Height</label>
+            <div class="select-wrap tiny wide"><select id="height" class="field"></select></div>
+            <label for="weight">Weight</label>
+            <div class="select-wrap tiny wide"><select id="weight" class="field"></select></div>
+          </div>
+
+          <div class="bmi" id="bmiInfo" hidden>
+            <span>BMI <strong id="bmiValue">-</strong></span>
+            <span class="bmi-cat" id="bmiCat"></span>
+          </div>
+
+          <label class="ask" for="symptom">what your simple</label>
+          <input id="symptom" class="field input-plain" type="text" placeholder="placeholder . . ." />
+
+          <button type="submit" class="btn-enter">Enter</button>
+          <div class="result-box" id="checkResult" role="status" aria-live="polite"></div>
+
+          <p class="disclaimer">The tool does not provide medical advice</p>
+          <a href="#" class="more">See additional info</a>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ บันทึกอาการใหม่ ============ -->
+  <dialog class="dlg" id="symptomDialog" aria-labelledby="dlgTitle">
+    <form id="symptomForm" class="dlg-form" novalidate>
+      <h2 id="dlgTitle">บันทึกอาการใหม่</h2>
+
+      <label for="sName">อาการ</label>
+      <input id="sName" type="text" maxlength="60" placeholder="เช่น ปวดหัว, ไอ, มีไข้" required />
+
+      <label for="sDate">วันที่</label>
+      <input id="sDate" type="date" required />
+
+      <fieldset class="dlg-levels">
+        <legend>ความรุนแรง</legend>
+        <label class="lvl"><input type="radio" name="sLevel" value="mild" /><span class="badge badge-mild">ไม่รุนแรง</span></label>
+        <label class="lvl"><input type="radio" name="sLevel" value="mid" checked /><span class="badge badge-mid">ปานกลาง</span></label>
+        <label class="lvl"><input type="radio" name="sLevel" value="severe" /><span class="badge badge-severe">รุนแรง</span></label>
+      </fieldset>
+
+      <label for="sNote">หมายเหตุ (ไม่บังคับ)</label>
+      <textarea id="sNote" rows="3" maxlength="200" placeholder="เช่น เริ่มเป็นตอนเช้า มีไข้ร่วมด้วย"></textarea>
+
+      <p class="dlg-hint">ข้อมูลที่บันทึกถูกเก็บในเบราว์เซอร์นี้เท่านั้น ไม่ได้ส่งไปที่ใด</p>
+      <p class="dlg-err" id="sErr" role="alert"></p>
+
+      <div class="dlg-actions">
+        <button type="button" class="btn btn-ghost" id="sCancel">ยกเลิก</button>
+        <button type="submit" class="btn btn-solid">บันทึก</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="my-health.js"></script>
+  <script type="module" src="body-viewer.js"></script>
+</body>
+</html>
