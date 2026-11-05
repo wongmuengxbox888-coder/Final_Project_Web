@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Health Assistant | W+</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/ai-assistant.css" />
+</head>
+<body>
+
+  <!-- ============ NAVBAR (คัดลอกจาก form.html ของเพื่อน) ============ -->
+  <nav class="p-3 sm:p-4 md:p-6 flex flex-wrap justify-between items-center gap-3 bg-white shadow-md sticky top-0 z-50">
+    <img src="image/who care I care 4.png" alt="Avatar" class="w-16 h-10 sm:w-20 sm:h-12">
+
+    <ul class="hidden md:flex gap-4 lg:gap-8 text-[#14466D] justify-end font-['Prompt']">
+            <li><a href="index.html" class="hover:border hover:rounded hover:p-3 hover:rounded-[20px] hover:shadow-lg hover:text-[#397B8D] border border-transparent p-3 transition-all duration-300">Home</a></li>
+            <li><a href="form.html" class="hover:border hover:rounded hover:p-3 hover:rounded-[20px] hover:shadow-lg hover:text-[#397B8D] border border-transparent p-3 transition-all duration-300">My Health</a></li>
+            <li><a href="form.html" class="hover:border hover:rounded hover:p-3 hover:rounded-[20px] hover:shadow-lg hover:text-[#397B8D] border text-[#397B8D] p-3 rounded-[20px] shadow-lg">AI Health Assistant</a></li>
+            <li><a href="mapfeature.html" class="hover:border hover:rounded hover:p-3 hover:rounded-[20px] hover:shadow-lg hover:text-[#397B8D] border border-transparent p-3 transition-all duration-300">Find Health Care</a></li>
+            <li><a href="anatomy.html" class="hover:border hover:rounded hover:p-3 hover:rounded-[20px] hover:shadow-lg hover:text-[#397B8D] border border-transparent p-3 transition-all duration-300">Health Que</a></li>
+        </ul>
+
+    <div class="relative flex items-center gap-2 sm:gap-4">
+      <div class="relative hidden sm:block">
+        <input type="text" placeholder="Search..." class="px-4 pl-10 w-[150px] md:w-[200px] lg:w-[350px] py-2 rounded-[20px] focus:outline-none focus:ring-2 focus:ring-blue-300 border border-gray-300">
+        <svg xmlns="http://www.w3.org/2000/svg"
+            class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500"
+            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <circle cx="11" cy="11" r="7" stroke-width="2"></circle>
+          <path stroke-width="2" stroke-linecap="round" d="m16 16 4 4"></path>
+        </svg>
+      </div>
+
+      <div class="relative">
+        <img id="avatarButton" type="button" data-dropdown-toggle="userDropdown" data-dropdown-placement="bottom-start" class="w-10 h-9 sm:w-12 sm:h-10 rounded-full cursor-pointer border border-gray-300" src="image/image 7.png" alt="User dropdown">
+      </div>
+
+      <!-- Dropdown menu -->
+      <div id="userDropdown" class="z-10 absolute mt-2 top-full right-0 rounded-[10px] bg-black/40 backdrop-blur-sm border-white/30 hidden text-white border shadow-lg w-44">
+        <div class="px-4 py-3 border-b border-white/20 text-sm">
+          <div class="font-medium">303 304 306</div>
+          <div class="truncate">Ds_web@su.ac.th</div>
+        </div>
+        <ul class="p-2 text-sm font-medium" aria-labelledby="avatarButton">
+          <li><a href="index.html" class="block w-full p-2 hover:bg-white/10 rounded-md">Home</a></li>
+          <li><a href="#" class="block w-full p-2 hover:bg-white/10 rounded-md">Settings</a></li>
+          <li><a href="#" class="block w-full p-2 hover:bg-white/10 rounded-md">Help</a></li>
+          <li><a href="#" class="block w-full p-2 hover:bg-white/10 rounded-md">Sign out</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="page">
+    <section class="chat-card" aria-label="AI Health Assistant chat">
+
+      <!-- ---- Chat history ---- -->
+      <aside class="history" aria-labelledby="historyTitle">
+        <h2 class="history-title" id="historyTitle">Chat History</h2>
+        <ul class="history-list" id="historyList"></ul>
+      </aside>
+
+      <!-- ---- Conversation ---- -->
+      <div class="chat-main">
+        <button type="button" class="new-chat" id="newChat">New Chat</button>
+
+        <div class="chat-stage" id="chatStage" role="log" aria-live="polite" aria-label="Conversation">
+          <div class="welcome" id="welcome">
+            <img src="image/who care I care 4.png" alt="W+" class="welcome-logo" />
+            <p class="welcome-text">Tell me How you feeling today</p>
+          </div>
+          <div class="messages" id="messages"></div>
+        </div>
+
+        <form class="composer" id="composer" autocomplete="off">
+          <input id="prompt" type="text" placeholder="Ask Ai....." aria-label="Ask AI" />
+          <button type="submit" class="send" id="send">Send</button>
+        </form>
+        <p class="disclaimer">AI answers are general information only and cannot replace a doctor&rsquo;s diagnosis.</p>
+      </div>
+
+    </section>
+  </main>
+
+  <script src="js/ai-assistant.js"></script>
+  <script src="alldd.js"></script>
+</body>
+</html>
