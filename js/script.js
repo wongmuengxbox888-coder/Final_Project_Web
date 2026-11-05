@@ -112,19 +112,23 @@ const hubSearch = document.getElementById('hubSearch');
 
 hubCards.forEach(card => {
   card.addEventListener('click', e => {
-    e.preventDefault();
 
     switch (card.dataset.action) {
+
       case 'ai':
-        hubSearch?.focus();
+        window.location.href = './ai-assistant.html';
         break;
+
       case 'track':
-        // window.location.href = 'track.html';
+        window.location.href = './anatomy.html';
         break;
+
       case 'care':
-        // window.location.href = 'find-care.html';
+        window.location.href = './mapfeature.html';
         break;
+
     }
+
   });
 });
 
