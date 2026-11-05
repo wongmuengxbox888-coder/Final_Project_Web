@@ -26,9 +26,9 @@
         <ul class="hidden md:flex gap-4 lg:gap-8 text-[#14466D] justify-end ">
             <li><a href="index.html" class="hover:border hover:rounded hover:p-3 hover:rounded-[20px] hover:shadow-lg hover:text-[#397B8D] border text-[#397B8D] p-3 rounded-[20px] shadow-lg">Home</a></li>
             <li><a href="form.html" class="hover:border hover:rounded hover:p-3 hover:rounded-[20px] hover:shadow-lg hover:text-[#397B8D] border border-transparent p-3 transition-all duration-300">My Health</a></li>
-            <li><a href="form.html" class="hover:border hover:rounded hover:p-3 hover:rounded-[20px] hover:shadow-lg hover:text-[#397B8D] border border-transparent p-3 transition-all duration-300">AI Health Assistant</a></li>
-            <li><a href="form.html" class="hover:border hover:rounded hover:p-3 hover:rounded-[20px] hover:shadow-lg hover:text-[#397B8D] border border-transparent p-3 transition-all duration-300">Find Health Care</a></li>
-            <li><a href="form.html" class="hover:border hover:rounded hover:p-3 hover:rounded-[20px] hover:shadow-lg hover:text-[#397B8D] border border-transparent p-3 transition-all duration-300">Health News</a></li>
+            <li><a href="ai-assistant.html" class="hover:border hover:rounded hover:p-3 hover:rounded-[20px] hover:shadow-lg hover:text-[#397B8D] border border-transparent p-3 transition-all duration-300">AI Health Assistant</a></li>
+            <li><a href="mapfeature.html" class="hover:border hover:rounded hover:p-3 hover:rounded-[20px] hover:shadow-lg hover:text-[#397B8D] border border-transparent p-3 transition-all duration-300">Find Health Care</a></li>
+            <li><a href="anatomy.html" class="hover:border hover:rounded hover:p-3 hover:rounded-[20px] hover:shadow-lg hover:text-[#397B8D] border border-transparent p-3 transition-all duration-300">Health Que</a></li>
         </ul>
 
         <!-- ระยะห่างปุ่ม repo  -->
@@ -413,8 +413,109 @@
   </div>
 </section>
 
+<footer class="w-full font-['Prompt']">
+  <div class="bg-[#14466D] text-white p-6 sm:p-10 lg:p-16">
 
-<script src="script.js"></script>
+    <!-- ส่วนบน -->
+    <div class="grid grid-cols-2 gap-8 sm:gap-10 lg:grid-cols-[1.6fr_1fr_1fr_1fr]">
+
+      <!-- About -->
+      <div class="col-span-2 lg:col-span-1">
+        <img src="image/who care I care white1 1.png" alt="Logo" class="w-20 h-10 sm:w-28 sm:h-16 mb-4">
+        <p class="text-sm">About</p>
+        <p class="text-sm mt-1 pb-3 border-b border-white/20">
+          พราะสุขภาพของคุณเป็นสิ่งสำคัญ<br>
+          เราจึงมุ่งมั่นให้การดูแลสุขภาพเป็นเรื่องง่ายและ<br>
+          เข้าถึงได้สำหรับทุกคน
+        </p>
+
+        <p class="text-sm mt-5">Visits us on</p>
+        <p class="font-medium mt-2 break-words">
+          Cha-am District Office, Narathip Road, Ban Phli, Phetchaburi Province 76120, Thailand
+        </p>
+        <a href="#" class="inline-flex items-center gap-2 text-sm underline mt-5">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          Direct Me
+        </a>
+      </div>
+
+      <!-- Quick link -->
+      <div>
+        <h3 class="text-lg sm:text-xl font-semibold mb-4">Quick link</h3>
+        <ul class="flex flex-col gap-3 text-sm sm:text-base">
+          <li><a href="#" class="hover:underline">About</a></li>
+          <li><a href="#" class="hover:underline">Our Services</a></li>
+          <li><a href="#" class="hover:underline">Appointment</a></li>
+          <li><a href="#" class="hover:underline">Our Doctors</a></li>
+          <li><a href="#" class="hover:underline">Help Center &amp; FAQ</a></li>
+          <li><a href="#" class="hover:underline">Contact</a></li>
+          <li><a href="#" class="hover:underline">Blog &amp; Articles</a></li>
+        </ul>
+      </div>
+
+      <!-- Support -->
+      <div>
+        <h3 class="text-lg sm:text-xl font-semibold mb-4">Support</h3>
+        <ul class="flex flex-col gap-3 text-sm sm:text-base">
+          <li><a href="#" class="hover:underline">Privacy Policy</a></li>
+          <li><a href="#" class="hover:underline">Term &amp; Conditions</a></li>
+          <li><a href="#" class="hover:underline">Support</a></li>
+          <li><a href="#" class="hover:underline">Our Help Center</a></li>
+          <li><a href="#" class="hover:underline">Contact</a></li>
+          <li><a href="#" class="hover:underline">Feature Request</a></li>
+          <li><a href="#" class="hover:underline">Online Support</a></li>
+        </ul>
+      </div>
+
+      <!-- Newsletter -->
+      <div class="col-span-2 lg:col-span-1">
+        <h3 class="text-lg sm:text-xl font-semibold mb-4">Newsletter</h3>
+        <input type="email" placeholder="Enter your email" class="w-full px-3 py-2 rounded-lg text-sm text-black outline-none">
+        <button class="w-full mt-3 py-2 rounded-lg bg-[#6BB5A6] hover:opacity-90">Subscribe</button>
+        <p class="text-xs mt-5">More informations</p>
+        <p class="text-sm font-medium">(+66) 097-694-6943</p>
+        <p class="text-xs mt-4">Our Email</p>
+        <p class="text-sm font-medium break-all">WCIC@hotmail.com</p>
+      </div>
+    </div>
+
+    <!-- เส้นคั่น -->
+    <div class="border-t border-white/20 mt-10 pt-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-xs">
+      <p>© 2026 Who Care I Care. All Rights Reserved.</p>
+
+      <div class="flex flex-wrap gap-x-6 gap-y-2">
+        <a href="#" class="hover:underline">Privacy Policy</a>
+        <a href="#" class="hover:underline">Term &amp; Conditions</a>
+      </div>
+
+      <!-- Social -->
+      <div class="flex flex-wrap items-center gap-2">
+        <span>Follow Us On:</span>
+        <a href="#" class="w-6 h-6 rounded-full bg-white text-[#14466D] flex items-center justify-center">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="#" class="w-6 h-6 rounded-full bg-white text-[#14466D] flex items-center justify-center">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l16 16M20 4L4 20"/></svg>
+        </a>
+        <a href="#" class="w-6 h-6 rounded-full bg-white text-[#14466D] flex items-center justify-center">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg>
+        </a>
+        <a href="#" class="w-6 h-6 rounded-full bg-white text-[#14466D] flex items-center justify-center">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+        </a>
+        <a href="#" class="w-6 h-6 rounded-full bg-white text-[#14466D] flex items-center justify-center">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+
+<script src="js/script.js"></script>
+<script src="js/alldd.js"></script>
+
 
 </body>
 </html>
