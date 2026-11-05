@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="my-health.css" />
+  <link rel="stylesheet" href="css/my-health.css" />
   <script type="importmap">
     {
       "imports": {
@@ -22,46 +22,58 @@
 
  
   <nav class="p-3 sm:p-4 md:p-6 flex flex-wrap justify-between items-center gap-3 bg-white shadow-md sticky top-0 z-50">
-    <img src="image/who care I care 4.png" alt="Avatar" class="w-16 h-10 sm:w-20 sm:h-12">
+        <!-- Responsive: ปรับขนาดโลโก้ให้เล็กลงบนมือถือ -->
+        <img src="image/who care I care 4.png" alt="Avatar" class="w-16 h-10 sm:w-20 sm:h-12">
 
-    <ul class="hidden md:flex gap-4 lg:gap-8 text-[#14466D] justify-end ">
-      <li><a href="index.html" class="hover:border hover:rounded hover:p-3 hover:rounded-[20px] hover:shadow-lg hover:text-[#397B8D] border border-transparent p-3 transition-all duration-300">Home</a></li>
-      <li><a href="my-health.html" class="hover:border hover:rounded hover:p-3 hover:rounded-[20px] hover:shadow-lg hover:text-[#397B8D] border text-[#397B8D] p-3 rounded-[20px] shadow-lg" aria-current="page">My Health</a></li>
-      <li><a href="ai-assistant.html" class="hover:border hover:rounded hover:p-3 hover:rounded-[20px] hover:shadow-lg hover:text-[#397B8D] border border-transparent p-3 transition-all duration-300">AI Health Assistant</a></li>
-      <li><a href="form.html" class="hover:border hover:rounded hover:p-3 hover:rounded-[20px] hover:shadow-lg hover:text-[#397B8D] border border-transparent p-3 transition-all duration-300">Find Health Care</a></li>
-      <li><a href="form.html" class="hover:border hover:rounded hover:p-3 hover:rounded-[20px] hover:shadow-lg hover:text-[#397B8D] border border-transparent p-3 transition-all duration-300">Health News</a></li>
-    </ul>
-
-    <div class="relative flex items-center gap-2 sm:gap-4">
-      <div class="relative hidden sm:block">
-        <input type="text" placeholder="Search..." class="px-4 pl-10 w-[150px] md:w-[200px] lg:w-[350px] py-2 rounded-[20px] focus:outline-none focus:ring-2 focus:ring-blue-300 border border-gray-300">
-        <svg xmlns="http://www.w3.org/2000/svg"
-            class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500"
-            fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <circle cx="11" cy="11" r="7" stroke-width="2"></circle>
-          <path stroke-width="2" stroke-linecap="round" d="m16 16 4 4"></path>
-        </svg>
-      </div>
-
-      <div class="relative">
-        <img id="avatarButton" type="button" data-dropdown-toggle="userDropdown" data-dropdown-placement="bottom-start" class="w-10 h-9 sm:w-12 sm:h-10 rounded-full cursor-pointer border border-gray-300" src="image/image 7.png" alt="User dropdown">
-      </div>
-
-      <!-- Dropdown menu -->
-      <div id="userDropdown" class="z-10 absolute mt-2 top-full right-0 rounded-[10px] bg-black/40 backdrop-blur-sm border-white/30 hidden text-white border shadow-lg w-44">
-        <div class="px-4 py-3 border-b border-white/20 text-sm">
-          <div class="font-medium">303 304 306</div>
-          <div class="truncate">Ds_web@su.ac.th</div>
-        </div>
-        <ul class="p-2 text-sm font-medium" aria-labelledby="avatarButton">
-          <li><a href="index.html" class="block w-full p-2 hover:bg-white/10 rounded-md">Home</a></li>
-          <li><a href="#" class="block w-full p-2 hover:bg-white/10 rounded-md">Settings</a></li>
-          <li><a href="#" class="block w-full p-2 hover:bg-white/10 rounded-md">Help</a></li>
-          <li><a href="#" class="block w-full p-2 hover:bg-white/10 rounded-md">Sign out</a></li>
+        <!-- Responsive: ซ่อนเมนูบนมือถือ และแสดงตั้งแต่หน้าจอ md (768px) -->
+        <ul class="hidden md:flex gap-4 lg:gap-8 text-[#14466D] justify-end ">
+            <li><a href="index.html" class="hover:border hover:rounded hover:p-3 hover:rounded-[20px] hover:shadow-lg hover:text-[#397B8D] border text-[#397B8D] p-3 rounded-[20px] shadow-lg">Home</a></li>
+            <li><a href="form.html" class="hover:border hover:rounded hover:p-3 hover:rounded-[20px] hover:shadow-lg hover:text-[#397B8D] border border-transparent p-3 transition-all duration-300">My Health</a></li>
+            <li><a href="ai-assistant.html" class="hover:border hover:rounded hover:p-3 hover:rounded-[20px] hover:shadow-lg hover:text-[#397B8D] border border-transparent p-3 transition-all duration-300">AI Health Assistant</a></li>
+            <li><a href="mapfeature.html" class="hover:border hover:rounded hover:p-3 hover:rounded-[20px] hover:shadow-lg hover:text-[#397B8D] border border-transparent p-3 transition-all duration-300">Find Health Care</a></li>
+            <li><a href="anatomy.html" class="hover:border hover:rounded hover:p-3 hover:rounded-[20px] hover:shadow-lg hover:text-[#397B8D] border border-transparent p-3 transition-all duration-300">Health Que</a></li>
         </ul>
-      </div>
-    </div>
-  </nav>
+        
+        <!-- ระยะห่างปุ่ม repo  -->
+        <div class="relative flex items-center gap-2 sm:gap-4">
+
+            <!-- Responsive: ซ่อนช่อง Search เมื่อหน้าจอเล็กกว่า 640px -->
+            <div class="relative hidden sm:block">
+                <input type="text" placeholder="Search..." class="px-4 pl-10 w-[150px] md:w-[200px] lg:w-[350px] py-2 rounded-[20px] focus:outline-none focus:ring-2 focus:ring-blue-300 border border-gray-300">
+                <!-- ไอคอนแว่นขยาย -->
+                <svg xmlns="http://www.w3.org/2000/svg" 
+                    class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500"
+                    fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <circle cx="11" cy="11" r="7" stroke-width="2"></circle>
+                    <path stroke-width="2" stroke-linecap="round" d="m16 16 4 4"></path>
+                </svg>
+            </div>
+            
+                
+            
+
+            <div class="relative">
+                <img id="avatarButton" type="button" data-dropdown-toggle="userDropdown" data-dropdown-placement="bottom-start" class="w-10 h-9 sm:w-12 sm:h-10 rounded-full cursor-pointer border border-gray-300" src="image/image 7.png" alt="User dropdown">
+            </div>
+
+            <!-- Dropdown menu -->
+            <div id="userDropdown" class="z-10 absolute mt-2 top-full right-0 rounded-[10px] bg-black/40 backdrop-blur-sm border-white/30 hidden text-white border shadow-lg w-44">
+                <div class="px-4 py-3 border-b border-white/20 text-sm">
+                    <div class="font-medium">303 304 306</div>
+                    <div class="truncate">Ds_web@su.ac.th</div>
+                </div>
+                <ul class="p-2 text-sm font-medium" aria-labelledby="avatarButton">
+                    <li><a href="index.html" class="block w-full p-2 hover:bg-white/10 rounded-md">Home</a></li>
+                    <li><a href="#" class="block w-full p-2 hover:bg-white/10 rounded-md">Settings</a></li>
+
+                    <li><a href="#" class="block w-full p-2 hover:bg-white/10 rounded-md">Help</a></li>
+                    <li><a href="#" class="block w-full p-2 hover:bg-white/10 rounded-md">Sign out</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
 
   <main class="page">
 
@@ -126,7 +138,9 @@
                 </div>
               </div>
               <p>รับคำแนะนำเบื้องต้นจาก AI<br />พร้อมข้อมูลสุขภาพที่เกี่ยวข้อง</p>
-              <button class="diag-btn" data-go="ai">เริ่มประเมินจาก AI <span aria-hidden="true">→</span></button>
+              <a class="diag-btn" data-go="ai" href="ai-assistant.html">
+                เริ่มประเมินจาก AI <span aria-hidden="true">→</span>
+              </a>
             </article>
 
             <article class="diag diag-doc">
@@ -182,7 +196,7 @@
       </div>
 
       <!-- ---- Column 3: cost calculator + hospitals ---- -->
-      <div class="col col-right">
+      <div class="col col-right ">
         <div class="card cost">
           <h2 class="cost-title">คำนวณค่ารักษา</h2>
           <p class="cost-label bold">ประมาณค่าใช้จ่ายเบื้องต้น</p>
@@ -245,63 +259,137 @@
     </section>
 
     <!-- ============ SYMPTOM CHECKER ============ -->
-    <section class="checker" aria-labelledby="checkerTitle">
-      <h1 id="checkerTitle">Symptom Checker</h1>
-      <p class="checker-sub">Understand your symptoms</p>
+    <div class="min-h-screen grid grid-cols-1 lg:grid-cols-[1fr_390px]"> 
 
-      <div class="checker-body">
-        <div class="body-view" id="bodyView">
-          <!-- รูปจำลอง: แสดงเฉพาะตอนยังไม่มีไฟล์โมเดล -->
-          <svg id="bodyFallback" viewBox="0 0 200 480" height="480" aria-label="Human body placeholder">
-            <g fill="#e8a58f" stroke="#b9533b" stroke-width="2" stroke-linejoin="round">
-              <ellipse cx="100" cy="36" rx="22" ry="28"/>
-              <path d="M78 66h44l4 12c20 4 38 10 44 28l6 90-16 4-4-62-10 4 4 90-8 130-24 4-8-110-8 110-24-4-8-130 4-90-10-4-4 62-16-4 6-90c6-18 24-24 44-28z"/>
-            </g>
-          </svg>
-          <div id="bodyCanvas" class="body-canvas" aria-label="3D anatomy model"></div>
-          <div class="hold" id="holdHint">hold to move</div>
-          <p class="model-msg" id="modelMsg" hidden></p>
-          <button type="button" class="spin" id="spinBtn" aria-pressed="false">spin 360</button>
-        </div>
+    <!-- โม -->
+    <section class="relative h-[62vh] lg:h-screen bg-gradient-to-b from-[#1a1a1a] to-[#0b0b0b]">
+      <div id="viewport" class="absolute inset-0"></div>
 
-        <form class="checker-form" id="checkerForm" novalidate>
-          <h2>Identify possible consition</h2>
+      <!-- มุมซ้ายบว -->
+    <div class="absolute top-4 left-4 w-full pointer-events-none">
+      <div class="text-center">
+        <h1 class="text-xl font-bold text-[#20466b]">ANATOMY</h1>
+        <p class="text-xs text-gray-400">ลากเพื่อหมุน • เลื่อนล้อเพื่อซูม</p>
+      </div>
+    </div>
 
-          <div class="row-2">
-            <div class="fld">
-              <label for="age">Age</label>
-              <div class="select-wrap tiny"><select id="age" class="field"></select></div>
-            </div>
-            <fieldset class="fld gender">
-              <legend>Gender</legend>
-              <label class="radio"><input type="radio" name="gender" value="male" checked /> <span></span> Male</label>
-              <label class="radio"><input type="radio" name="gender" value="female" /> <span></span> Female</label>
-            </fieldset>
-          </div>
-
-          <div class="row-hw">
-            <label for="height">Height</label>
-            <div class="select-wrap tiny wide"><select id="height" class="field"></select></div>
-            <label for="weight">Weight</label>
-            <div class="select-wrap tiny wide"><select id="weight" class="field"></select></div>
-          </div>
-
-          <div class="bmi" id="bmiInfo" hidden>
-            <span>BMI <strong id="bmiValue">-</strong></span>
-            <span class="bmi-cat" id="bmiCat"></span>
-          </div>
-
-          <label class="ask" for="symptom">what your simple</label>
-          <input id="symptom" class="field input-plain" type="text" placeholder="placeholder . . ." />
-
-          <button type="submit" class="btn-enter">Enter</button>
-          <div class="result-box" id="checkResult" role="status" aria-live="polite"></div>
-
-          <p class="disclaimer">The tool does not provide medical advice</p>
-          <a href="#" class="more">See additional info</a>
-        </form>
+      <!-- มุมซ้ายล่าง -->
+      <div class="absolute bottom-4 left-4 text-xs text-gray-400 pointer-events-none leading-5">
+        <div>ความสูงโมเดล: <span id="infoHeight" class="text-white font-semibold">-</span></div>
+        <div>ความกว้างลำตัว: <span id="infoGirth" class="text-white font-semibold">-</span></div>
       </div>
     </section>
+
+    <!-- กล่อง กรอกข้อมูล  -->
+    <section class="relative m-4 lg:m-0 lg:absolute lg:right-6 lg:top-1/2 lg:-translate-y-1/2 lg:w-[440px] lg:max-h-[calc(100vh-3rem)] lg:overflow-y-auto bg-white text-gray-900 rounded-2xl shadow-2xl p-6">
+      <h2 class="text-lg font-bold mb-1">คำนวณ BMI</h2>
+      <p class="text-xs text-gray-500 mb-5">
+        กรอกส่วนสูงและน้ำหนัก โมเดลจะยืดหด อ้วน ผอม ตามค่าที่กรอกแบบเรียลไทม์
+      </p>
+
+      <!-- ส่วนสูง -->
+      <div class="mb-5">
+        <div class="flex items-center justify-between mb-2">
+          <label for="height" class="text-sm text-gray-700">ส่วนสูง (ซม.)</label>
+          <input id="height" type="number" min="120" max="220" step="1" value="170"
+                 class="w-24 rounded-md bg-[#f1f1f1] text-gray-900 border border-gray-300 px-3 py-2 text-right focus:outline-none focus:border-[#20466b]">
+        </div>
+        <input id="heightRange" type="range" min="120" max="220" step="1" value="170" class="w-full">
+        <div class="flex justify-between text-[11px] text-gray-500"><span>120</span><span>220</span></div>
+      </div>
+
+      <!-- น้ำหนัก -->
+      <div class="mb-5">
+        <div class="flex items-center justify-between mb-2">
+          <label for="weight" class="text-sm text-gray-700">น้ำหนัก (กก.)</label>
+          <input id="weight" type="number" min="30" max="200" step="0.5" value="63.6"
+                 class="w-24 rounded-md bg-[#f1f1f1] text-gray-900 border border-gray-300 px-3 py-2 text-right focus:outline-none focus:border-[#20466b]">
+        </div>
+        <input id="weightRange" type="range" min="30" max="200" step="0.5" value="63.6" class="w-full">
+        <div class="flex justify-between text-[11px] text-gray-500"><span>30</span><span>200</span></div>
+      </div>
+
+      <!-- BMI (ปรับย้อนกลับเป็นน้ำหนักได้) -->
+      <div class="mb-5">
+        <div class="flex items-center justify-between mb-2">
+          <label for="bmiRange" class="text-sm text-gray-700">ปรับด้วยค่า BMI</label>
+          <span class="text-xs text-gray-500">ลากแล้วน้ำหนักจะเปลี่ยนตาม</span>
+        </div>
+        <input id="bmiRange" type="range" min="12" max="50" step="0.1" value="22" class="w-full"> 
+      </div>
+
+      <!-- ผลลัพธ์ BMI -->
+      <div class="rounded-xl bg-[#f1f1f1] border border-gray-200 p-4 mb-5">
+        <div class="flex items-end justify-between">
+          <div>
+            <p class="text-xs text-gray-500">ค่า BMI</p>
+            <p id="bmiValue" class="text-4xl font-bold leading-none mt-1 text-gray-900">22.0</p>
+          </div>
+          <span id="bmiCategory"
+                class="rounded-full px-3 py-1 text-xs font-semibold bg-green-600/20 text-green-400">ปกติ</span>
+        </div>
+
+        <!-- แถบสี BMI -->   <!--ใช้ gemini geanerate bmi color -->
+        <div class="relative mt-5 h-3 rounded-full overflow-hidden"
+             style="background: linear-gradient(90deg,#38bdf8 0%,#22c55e 20%,#eab308 33%,#f97316 45%,#ef4444 70%,#991b1b 100%)">
+        </div>
+        <div class="relative h-0">
+          <div id="bmiMarker"
+               class="absolute -top-[18px] h-6 w-1 -translate-x-1/2 rounded bg-[#20466b] shadow transition-[left] duration-300"
+               style="left: 30%"></div>
+        </div>
+        <div class="flex justify-between text-[10px] text-gray-500 mt-3">
+          <span>12</span><span>18.5</span><span>23</span><span>25</span><span>30</span><span>45+</span>
+        </div>
+      </div>
+
+      <!-- ตัวเลือกการแสดงผล -->
+      <div class="rounded-xl bg-[#f1f1f1] border border-gray-200 p-4 mb-5">
+        <div class="flex items-center justify-between mb-2">
+          <label for="exaggeration" class="text-sm text-gray-700">ความชัดของรูปร่าง</label>
+          <span id="exaggerationLabel" class="text-xs text-gray-500">1.0×</span>
+        </div>
+        <input id="exaggeration" type="range" min="0.5" max="2" step="0.1" value="1" class="w-full">
+        <p class="text-[11px] text-gray-500 mt-1">เพิ่มเพื่อให้เห็นความอ้วน/ผอมชัดขึ้น</p>
+
+        <label class="flex items-center gap-2 mt-4 text-sm text-gray-700 cursor-pointer">
+          <input id="autoRotate" type="checkbox" class="h-4 w-4 accent-[#ff5500]">
+          หมุนโมเดลอัตโนมัติ
+        </label>
+      </div>
+
+      <div class="flex gap-3">
+        <button id="reset"
+                class="flex-1 rounded-lg bg-[#20466b]  transition px-4 py-3 font-semibold text-white text-sm hover:bg-orange-700">
+          รีเซ็ต
+        </button>
+      </div>
+
+      <!-- ช่องพิมพ์ข้อความ -->
+      <div class="mt-6 pt-5 border-t border-gray-200">
+        <!-- หัวข้อสีน้ำเงินเข้ม -->
+        <label for="symptomInput" class="block text-lg text-[#20466b] mb-2">บอกความรู้สึกของคุณ</label>
+        <!-- แถวเดียว: ช่องพิมพ์ (ยืดเต็ม) + ปุ่ม Enter -->
+        <div class="flex items-center gap-3">
+          <input id="symptomInput" type="text" placeholder="พิมพ์ที่นี่ . . ."
+                 class="flex-1 min-w-0 rounded-lg bg-white text-gray-900 placeholder-gray-400 shadow-md border border-gray-100 px-3 py-2 text-sm focus:outline-none focus:border-[#20466b]">
+          <button id="symptomEnter" type="button"
+                  class="rounded-full bg-[#20466b] hover:bg-[#183a58] transition px-6 py-2 text-sm font-semibold text-white">Enter
+          </button>
+        </div>
+        <!-- ข้อความเล็กใต้ช่องพิมพ์ + ลิงก์สีเขียวอมฟ้า -->
+        <p class="text-[11px] text-gray-700 mt-2">
+          เครื่องมือนี้ไม่ได้ให้คำแนะนำทางการแพทย์
+          <a href="#" class="text-[#5f9ea0] hover:underline">ดูข้อมูลเพิ่มเติม</a>
+        </p>
+      </div>
+
+      <p class="text-[11px] text-gray-500 mt-5 leading-5">
+        เกณฑ์ BMI ตามมาตรฐานเอเชีย: &lt;18.5 ผอม • 18.5–22.9 ปกติ • 23–24.9 น้ำหนักเกิน • 25–29.9 อ้วน • ≥30 อ้วนมาก<br>
+        โมเดลเป็นภาพประกอบเชิงสัดส่วนเท่านั้น ไม่ใช่การวินิจฉัยทางการแพทย์
+      </p>
+    </section>
+  </div>
   </main>
 
   <!-- ============ บันทึกอาการใหม่ ============ -->
@@ -336,6 +424,7 @@
   </dialog>
 
   <script src="my-health.js"></script>
-  <script type="module" src="body-viewer.js"></script>
+  <script src="js/app.js"></script>
+  <script src="alldd.js"></script>
 </body>
 </html>
