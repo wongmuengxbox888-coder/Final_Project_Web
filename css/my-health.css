@@ -48,7 +48,9 @@ ul { list-style: none; margin: 0; padding: 0; }
   grid-template-columns: 348px minmax(0, 1fr) 348px;
   gap: 18px 19px;
   align-items: start;
-  margin-top: 44px;
+  margin-left: 200px;         /* จัดกึ่งกลาง */
+  padding: 44px 22px 60px;   /* บน | ซ้าย-ขวา | ล่าง */
+  max-width: 1440px; 
 }
 .col { display: flex; flex-direction: column; gap: 16px; }
 .card { background: #fff; border-radius: var(--radius); padding: 20px; }

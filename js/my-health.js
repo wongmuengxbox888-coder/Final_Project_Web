@@ -371,10 +371,9 @@ function fillSelect(id, from, to, step, suffix, blank) {
   for (let v = from; v <= to; v += step) html += `<option value="${v}">${v}${suffix}</option>`;
   el.innerHTML = html;
 }
-fillSelect("#age", 1, 100, 1, "", "");
-fillSelect("#height", 100, 220, 1, " cm", "");
-fillSelect("#weight", 30, 160, 1, " kg", "");
-
+  fillSelect("#age", 1, 100, 1, "", "");
+  fillSelect("#height", 100, 220, 1, " cm", "");
+  fillSelect("#weight", 30, 160, 1, " kg", "");
 on("#checkerForm", "submit", (e) => {
   e.preventDefault();
   const out = $("#checkResult");

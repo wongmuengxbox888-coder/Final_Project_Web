@@ -29,7 +29,7 @@ light.position.set(3, 5, 4);
 scene.add(light);
 scene.add(new THREE.GridHelper(8, 32, 0x555555, 0x2a2a2a));
 
-// load model (ไม่จำเป็นอีก)
+// load model ไม่จำเป้น
 let rig; // กลุ่มที่เราจะยืด/หดตามค่า BMI
 
 new GLTFLoader().load(
@@ -62,7 +62,6 @@ let weight = 63.6;
 
 function update() {
   const bmi = weight / ((height / 100) * (height / 100));
-
   // แสดงค่าบนหน้าเว็บ
   $('height').value = height;
   $('heightRange').value = height;
